@@ -5,7 +5,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import StepDetails from "./StepDetails";
+// import StepDetails from "./StepDetails";
 import BasalStep from "../Components/layouts/Calendar(CropAdvisory)/BasalStep";
 
 export default function HorizontalLinearStepper({ cropDetails, date }: any) {

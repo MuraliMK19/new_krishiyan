@@ -443,8 +443,8 @@ const Footer = () => {
   } = translations[currentLanguage];
 
   return (
-    <footer className="bg-[#f3f1fe] text-[#333333] p-4 sm:p-8">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-[#C0DDFF] text-[#333333] p-4 sm:p-8">
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Logo and tagline */}
         <div>
           <img
@@ -459,6 +459,7 @@ const Footer = () => {
           >
             {readMore}
           </a>
+          <p className="m-5 ml-10 text-left text-green-500">Follow us on</p>
         </div>
 
         {/* Quick Links */}

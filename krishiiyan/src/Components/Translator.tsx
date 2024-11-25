@@ -68,7 +68,6 @@ const Translator = () => {
         htmlFor="language-select"
         className=" mb-2   text-green-400 dark:text-white text-lg font-semibold"
       > */}
-      <img src={lanimg} className="w-8 h-8 inline m-2" />
       {/* Language:{" "} */}
       {/* </label> */}
       <select
@@ -83,6 +82,7 @@ const Translator = () => {
           </option>
         ))}
       </select>
+      <img src={lanimg} className="w-8 h-8 inline m-2" />
     </div>
   );
 };

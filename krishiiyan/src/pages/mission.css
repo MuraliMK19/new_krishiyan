@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .wholebox {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding: 10px;
+    margin: 10px;
+  }
+  .box1 {
+    height: auto;
+    padding-bottom: 40px;
+    margin: 10px;
+  }
+  .box2 {
+    height: auto;
+    padding-top: 40px;
+    margin: 10px;
+  }
+  .image1 {
+    margin-top: -280px;
+  }
+}

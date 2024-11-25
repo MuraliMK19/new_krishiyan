@@ -47,13 +47,10 @@ import MandiPricesAdmin from "./pages/crop_advisory_admin/mandiPricesAdmin";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import OurTech from "./pages/OurTech";
-import Who from "./pages/Who";
 import Contact from "./pages/Contact";
-import What from "./pages/What";
 import Login from "./pages/Login";
 import NewRegestrationAdmin from "./pages/crop_advisory_admin/NewRegestrationAdmin";
 import DashBoardNew from "./pages/farmer/DashBoardNew";
-import Announcement from "./pages/Announcement";
 import Fponational from "./Components/Fponational";
 import Fporegister from "./Components/Fporegister";
 import PageSelector from "./pages/crop_advisary/ferticalselector";
@@ -96,16 +93,12 @@ function App() {
   return (
     <div className="App font-roboto box-border m-0 p-0">
       <Routes>
-        <Route path="/announcement" element={<Announcement />} />
         <Route path="/FPOnational" element={<Fponational />} />
         <Route path="/fporegister" element={<Fporegister />} />
         <Route path="/home" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/tech" element={<OurTech />} />
-        <Route path="/who" element={<Who />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/what" element={<What />} />
-        <Route path="/announcement" element={<Announcement />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/FPOnational" element={<Fponational />} />
         <Route path="/fporegister" element={<Fporegister />} />

@@ -1,17 +1,35 @@
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 1;
   }
-  
-  .blink {
-   animation: blink 1s infinite;
+  50% {
+    opacity: 0;
   }
-  .blink:hover{
-    animation: none;
-    color: black;
-    /* background-co  lor: red; */
+  100% {
+    opacity: 1;
   }
-  .blink:active{
-    animation: none;
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+.blink:hover {
+  animation: none;
+  color: black;
+  /* background-co  lor: red; */
+}
+.blink:active {
+  animation: none;
+}
+
+@media screen and (min-width: 767px) {
+  .mobile_screen {
+    display: none !important;
   }
+}
+
+@media screen and (max-width: 767px) {
+  .mobile {
+    display: none !important;
+  }
+}
