@@ -460,6 +460,10 @@ const Footer = () => {
             {readMore}
           </a>
           <p className="m-5 ml-10 text-left text-green-500">Follow us on</p>
+          <div className="flex space-x-3 ml-12 mt-[-10px]">
+            <img src="/Images/devicon-plain_linkedin.png" alt="loading" className="h-6 w-6" />
+            <img src="/Images/akar-icons_facebook-fill.png" alt="loading" className="h-6 w-6" />
+          </div>
         </div>
 
         {/* Quick Links */}
@@ -469,34 +473,22 @@ const Footer = () => {
           </h2>
           <ul className="space-y-4 text-lg text-left mx-20">
             <li>
-              <Link to="/" className="hover:underline">
-                {home}
-              </Link>
+              <a href="#home" className="hover:underline">Home</a>
             </li>
             <li>
-              <Link to="/who" className="hover:underline">
-                {who}
-              </Link>
+              <a href="#about" className="hover:underline">About</a>
             </li>
             <li>
-              <Link to="/what" className="hover:underline">
-                {what}
-              </Link>
+              <a href="#tech" className="hover:underline">Our Technology</a>
             </li>
             <li>
-              <Link to="/tech" className="hover:underline">
-                {tech}
-              </Link>
+              <a href="#team" className="hover:underline">Team</a>
             </li>
             <li>
-              <Link to="/blog" className="hover:underline">
-                {blog}
-              </Link>
+              <a href="#blog" className="hover:underline">Blog</a>
             </li>
             <li>
-              <Link to="/contact" className="hover:underline">
-                {contactUs}
-              </Link>
+              <a href="#contact" className="hover:underline">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -504,47 +496,39 @@ const Footer = () => {
         {/* Get in Touch */}
 
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-8 mr-24">
-            {getInTouch}
+          <h2 className="text-xl sm:text-2xl font-bold mb-8 mr-24 ">
+            Help
           </h2>
 
-          <div className="flex items-center mb-4">
-            <FaMapMarkerAlt className="mr-4 h-8 w-8 text-green-500" />
-            <p className="font-bold text-left mx-3">{address}</p>
-          </div>
-
-          <div className="flex items-center mb-4">
-            <FaEnvelope className="mr-4 h-6 w-6 text-green-500" />
-            <a
-              href="mailto:info@krishiyan.com"
-              className="hover:underline font-bold"
-            >
-              info@krishiyan.com
-            </a>
-          </div>
-
-          <div className="flex items-center ">
-            <FaPhone className="mr-4 h-6 w-6 text-green-500" />
-            <a
-              href="tel:+91 7066744494"
-              className="hover:underline mb-4 font-bold"
-            >
-              {call1}
-            </a>
-          </div>
-          <div className="flex items-center ">
-            <FaPhone className="mr-4 h-6 w-6 text-green-500" />
-            <a href="tel:+91 8055850995" className="hover:underline  font-bold">
-              {call2}
-            </a>
-          </div>
+          <ul className="space-y-4 text-lg text-left mx-20">
+            <li>
+              <a href="#contact" className="hover:underline">Customer Support</a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:underline">FAQ's</a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:underline">Contact</a>
+            </li>
+            <li>
+              <a href="/privacy" className="hover:underline">Policy</a>
+            </li>
+          </ul>
         </div>
 
         {/* Location */}
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-4">{ourLocation}</h2>
-
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28247.726883461957!2d72.628989!3d23.114339!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfffee43459262ff%3A0x3b639b2cb36a5284!2sWetAcre%20Sustainable%20Solutions%20LLP!5e1!3m2!1sen!2sin!4v1694681667907!5m2!1sen!2sin"></iframe>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Subscribe</h2>
+          <div className="flex rounded-full overflow-hidden border-2 border-blue-500 h-10 w-[335px]">
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="px-4 py-2 text-black outline-none h-10"
+            />
+            <button className="bg-blue-500 text-white px-4 py-2 m-0 mr-0 w-32 hover:bg-blue-600 h-10">
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
 

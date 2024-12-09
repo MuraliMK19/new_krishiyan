@@ -4,11 +4,12 @@ import './Cultivating.css'
 function Cultivating() {
     return (
         <>
-            <div className='xl:flex xl:p-24 justify-between cul'>
-                <div className='xl:w-[550px]'>
-                    <h1 className='text-4xl text-left font-bold'>Cultivating Sustainable </h1>
-                    <h1 className='text-[#3390FF] text-4xl text-left font-bold w-[300px]'>Success for Every Farmer</h1>
-                    <p className='pl-10 pt-5 text-left text-xl text-[#616161]'>By Equiping farmers with knowledge and resources, Krishiyan enables them to : </p>
+            <div className='xl:flex justify-around cul'>
+                <div className='xl:ml-24 xl:mt-10 cultivate'>
+                    <h1 className='text-4xl text-left font-bold xl:ml-2 culti'>Cultivating Sustainable </h1>
+                    <h1 className='text-[#3390FF] text-4xl text-left font-bold ml-2'>Success for Every</h1>
+                    <h1 className='text-[#3390FF] text-4xl text-left font-bold ml-2'>Farmer</h1>
+                    <p className='pl-5 pt-5 text-left text-xl text-[#616161]'>By Equiping farmers with knowledge and resources, Krishiyan enables them to : </p>
                     <ul className='text-xl text-left list-disc ml-14 leading-10 mt-4'>
                         <li>Maximize their productivity</li>
                         <li>Improve the quality of their product</li>

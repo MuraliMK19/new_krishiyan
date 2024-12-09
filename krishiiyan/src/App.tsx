@@ -1,7 +1,7 @@
 import "./App.css";
 import SideNav from "./Components/layouts/SideNav";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
   Navigate,
@@ -59,6 +59,9 @@ import AccountSetting from "./Components/AccountSetting";
 import NestedDropdown from "./Components/NestedDropdown";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import CardCarousel from "./pages/CardCarousel";
+import Home1 from "./pages/Home1";
+import Mission_vision from "./pages/Mission_vision";
 
 
 const AuthGuard = () => {
@@ -92,13 +95,13 @@ const menus = [
 function App() {
   return (
     <div className="App font-roboto box-border m-0 p-0">
+      {/* <BrowserRouter> */}
       <Routes>
         <Route path="/FPOnational" element={<Fponational />} />
         <Route path="/fporegister" element={<Fporegister />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/tech" element={<OurTech />} />
-        <Route path="/contact" element={<Contact />} />
+
+
         <Route path="/login" element={<LoginPage />} />
         <Route path="/FPOnational" element={<Fponational />} />
         <Route path="/fporegister" element={<Fporegister />} />
@@ -348,6 +351,7 @@ function App() {
 
         </Route>
       </Routes>
+      {/* </BrowserRouter > */}
     </div>
   );
 }

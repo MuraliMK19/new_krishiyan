@@ -1,0 +1,48 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background */
+}
+
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Circular Layout for Service Nodes */
+.service-group {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fpo-services {
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.industry-services {
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+/* Connection lines (optional, use SVG or CSS) */
+.connection-line {
+  position: absolute;
+  background-color: #ccc;
+  width: 2px;
+  height: 100px; /* Adjust height to connect elements */
+  transform: rotate(45deg); /* Rotate for angled lines */
+}

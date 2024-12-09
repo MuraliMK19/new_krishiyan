@@ -1,0 +1,8 @@
+.type-field{
+    width: 100%; /* Desired width */
+    height: 40px; /* Desired height */
+    border-radius: 10px;
+}
+.type-field .MuiInputBase-root {
+    height: 100%; /* Ensures the input field spans the full height of the container */
+}

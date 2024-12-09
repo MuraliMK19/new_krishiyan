@@ -10,8 +10,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import * as Api from "../../Services/Api";
 import { toast } from "react-toastify";
+import './Login.css'
 
 import GoogleOauthLogin from "../../Components/Auth/GoogleLogin";
+import { InputAdornment } from "@mui/material";
 
 const LoginPage = () => {
   let email1 = "";
@@ -66,8 +68,9 @@ const LoginPage = () => {
   };
 
   return (
-    <section className="bg-gray-50 min-h-screen flex items-center justify-center">
-      <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+    <>
+      <img src="/Images/logoname.png" alt="logo-loading" className="h-16 w-40 m-5" />
+      <section className="flex items-center justify-center mt-5">
         {/* Wrap the form and image in a container */}
         <div className="flex flex-col md:flex-row">
           {/* Image for mobile view */}
@@ -76,19 +79,16 @@ const LoginPage = () => {
           </div>
 
           {/* Form */}
-          <div className="md:w-1/2 px-8 md:px-16">
-            <h2 className="font-bold text-2xl text-[#002D74]">Login</h2>
-            <p className="text-xs mt-4 text-[#002D74]">
-              If you are already a member, easily log in
-            </p>
+          <div className="md:w-[400px]">
+            <h2 className="font-bold text-[20px] text-left font-sans">Welcome Back, Log In</h2>
 
-            <form onSubmit={handleSubmit} noValidate>
+            <form onSubmit={handleSubmit} noValidate className="login-form">
               <TextField
                 margin="normal"
                 required
                 fullWidth
                 id="email"
-                label="Email Address"
+                placeholder="User Name"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -99,6 +99,18 @@ const LoginPage = () => {
                   title:
                     "Please enter a valid email address with domains @gmail.com, @info, or @krishiyan.com",
                 }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <img
+                        src="/Images/user.png" // Replace with the actual image path or URL
+                        alt="User Icon"
+                        style={{ width: 24, height: 24 }} // Adjust dimensions as needed
+                      />
+                    </InputAdornment>
+                  ),
+                }}
+                className="custom-textfield"
               />
               <div className="relative">
                 <TextField
@@ -106,10 +118,22 @@ const LoginPage = () => {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  placeholder="Password"
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <img
+                          src="/Images/lock.png" // Replace with the actual image path or URL
+                          alt="User Icon"
+                          style={{ width: 24, height: 24 }} // Adjust dimensions as needed
+                        />
+                      </InputAdornment>
+                    ),
+                  }}
+                  className="password-custom"
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,36 +144,30 @@ const LoginPage = () => {
                   viewBox="0 0 16 16"
                 ></svg>
               </div>
-              <Grid container>
-                <Grid item>
-                  <Typography variant="body2" sx={{ mt: 1 }}>
-                    Forgot Password? {""}
-                    <Link
-                      variant="subtitle2"
-                      onClick={() => navigate("/forgot-password")}
-                      sx={{ cursor: "pointer" }}
-                    >
-                      {" Forgot Password"}
-                    </Link>
-                  </Typography>
-                </Grid>
-              </Grid>
+              <div className="grid-width text-right">
+                <Link
+                  variant="subtitle2"
+                  onClick={() => navigate("/forgot-password")}
+                  sx={{ cursor: "pointer" }}
+                  className="forgot-pwd">
+                  {" Forgot Password?"}
+                </Link>
+              </div>
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                className="bg-[#05AB2A] text-[#F3FFF1] flex shadow-[0px_4px_3px_rgba(0,0,0,0.25)] py-1 px-4 rounded mx-60 my-8 text-sm font-thin"
+                className="bg-[#3291FF] text-[#F3FFF1] flex shadow-[0px_4px_3px_rgba(0,0,0,0.25)] py-1 px-4 rounded mx-60 my-8 text-sm font-thin login-btn"
               >
-                Sign In
+                Log in
               </Button>
-              <div className="inline-flex items-center justify-center w-full">
-                <hr className="w-64 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
-                <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 dark:bg-gray-900">
-                  <h2 className="w-4 h-4 text-gray-700 dark:text-gray-300">
-                    OR
-                  </h2>
-                </div>
+              <div className="inline-flex items-center justify-around w-full">
+                <hr className="w-20 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
+                <h2 className=" text-gray-700 dark:text-gray-300">
+                  Or Log In With
+                </h2>
+                <hr className="w-20 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
               </div>
 
               <Grid container>
@@ -182,8 +200,8 @@ const LoginPage = () => {
             <img className="rounded-2xl" src="Images/login.webp" alt="Login" />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

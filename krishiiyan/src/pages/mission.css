@@ -2,6 +2,7 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
 @media screen and (max-width: 767px) {
   .wholebox {
     display: flex;
@@ -10,16 +11,19 @@ body {
     padding: 10px;
     margin: 10px;
   }
-  .box1 {
+
+  .Mission_box {
     height: auto;
     padding-bottom: 40px;
     margin: 10px;
   }
-  .box2 {
+
+  .Vision_box {
     height: auto;
     padding-top: 40px;
     margin: 10px;
   }
+
   .image1 {
     margin-top: -280px;
   }

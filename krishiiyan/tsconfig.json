@@ -21,6 +21,7 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "types/react-scroll-smooth.d.ts"
   ]
 }

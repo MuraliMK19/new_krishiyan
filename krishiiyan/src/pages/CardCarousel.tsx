@@ -38,11 +38,9 @@ const cardsData: CardProps[] = [
 ];
 
 const CardCarousel: React.FC = () => {
-
-
     return (
-        <div className="">
-            <h1 className="text-3xl p-5">Blog</h1>
+        <section id="blog" className="pt-10">
+            <h1 className="text-3xl p-5 xl:mt-7">Blog</h1>
             <div className="h-1 w-20 bg-[#3FC041] mx-auto"></div>
             <div className="flex cardss">
                 {cardsData.map((card, index) => (
@@ -54,8 +52,7 @@ const CardCarousel: React.FC = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
-
 export default CardCarousel;

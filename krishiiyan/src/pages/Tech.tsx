@@ -14,8 +14,8 @@ function Tech() {
     ];
 
     return (
-        <>
-            <h1 className="heading">Our Technology</h1>
+        <section id="tech" className="min-h-screen pt-20">
+            <h1 className="heading ">Our Technology</h1>
             <div className="divider"></div>
             <div className="timeline-container">
                 {steps.map((step, index) => (
@@ -32,7 +32,7 @@ function Tech() {
             <div className="big_box">
                 <div className="box1">
                     <div className="icon-container1">
-                        <img src="/Images/healthicons_agriculture.png" alt="loading" className="bg-green-500 rounded-full h-24 w-24 p-2 empower_image1" />
+                        <img src="/Images/healthicons_agriculture.png" alt="loading" className="bg-green-500 rounded-full h-24 w-24 xl:p-2 empower_image1" />
                     </div>
                     <div className="small_box1">
                         <h1 className="text-xl pb-3">Smart Agriculture Management</h1>
@@ -41,7 +41,7 @@ function Tech() {
                 </div>
                 <div className="box2">
                     <div className="icon-container2">
-                        <img src="/Images/mdi_regenerative-agriculture.png" alt="loading" className="bg-green-500 rounded-full h-24 w-24 p-2 empower_image2" />
+                        <img src="/Images/mdi_regenerative-agriculture.png" alt="loading" className="bg-green-500 rounded-full h-24 w-24 xl:p-2 empower_image2" />
                     </div>
                     <div className="small_box2">
                         <h1 className="text-xl pb-3">Cultivation Intelligence</h1>
@@ -50,7 +50,7 @@ function Tech() {
                 </div>
                 <div className="box3">
                     <div className="icon-container3">
-                        <img src="/Images/carbon_agriculture-analytics.png" alt="loading" className="bg-green-500 rounded-full h-24 w-24 p-5 empower_image3" />
+                        <img src="/Images/carbon_agriculture-analytics.png" alt="loading" className="bg-green-500 rounded-full h-24 w-24 xl:p-5 empower_image3" />
                     </div>
                     <div className="small_box3">
                         <h1 className="text-xl pb-3">Agri Connect Hub</h1>
@@ -58,7 +58,7 @@ function Tech() {
                     </div>
                 </div>
             </div>
-        </>
+        </section>
     );
 }
 

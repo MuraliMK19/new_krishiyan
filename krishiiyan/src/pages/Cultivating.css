@@ -5,9 +5,10 @@ body {
 
 @media screen and (max-width: 767px) {
   .container {
-    margin-left: -150px;
+    margin-left: -140px;
     width: 150px;
     height: 300px;
+    margin-top: -50px;
   }
   .image_top {
     margin-left: 200px;
@@ -24,7 +25,7 @@ body {
     margin-top: -20px;
   }
   .bigblue {
-    z-index: 3;
+    z-index: -10;
     margin-left: 150px;
     margin-top: -150px;
   }
@@ -38,10 +39,18 @@ body {
   }
   .cul {
     padding-top: 50px;
+    margin: auto;
+  }
+  .culti{
+    margin-left: 5px;
+  }
+  .cultivate{
+    padding: 20px;
   }
 }
 
 @media screen and (min-width: 767px) {
+  
   .image_top {
     margin-left: 200px;
     margin-top: 150px;
@@ -57,7 +66,7 @@ body {
     margin-top: -20px;
   }
   .bigblue {
-    z-index: 3;
+    z-index: -10;
     margin-left: 150px;
     margin-top: -200px;
   }
@@ -68,5 +77,9 @@ body {
   .smallgreen {
     margin-left: 550px;
     margin-top: -250px;
+  }
+  .cul {
+    padding-top: 50px;
+    margin-left: 100px;
   }
 }

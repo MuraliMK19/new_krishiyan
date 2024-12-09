@@ -1,0 +1,28 @@
+
+.container1 {
+  margin: auto;
+  justify-content: center;
+  gap: 50px;
+  padding-top: 50px;
+  margin-bottom: 100px;
+}
+.container1 img {
+  width: 20%;
+  border: 1px solid #a3a3a3;
+  border-radius: 10px;
+  padding: 10px;
+  height: 94px;
+  width: 220px;
+}
+@media screen and (max-width: 767px) {
+  .container1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px;
+  }
+  .container1 > img {
+    flex: 0 0 calc(50% - 10px); /* Takes 50% width minus gap */
+    max-width: calc(50% - 10px); /* Ensures items don't exceed 50% */
+  }
+}

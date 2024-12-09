@@ -1,121 +1,42 @@
-import { ClassNames } from "@emotion/react";
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import "./navbar.css";
-import Translator from "./Translator";
+import React, { useState } from 'react'
+import Translator from './Translator'
+import Home from '../pages/Home';
+import { link } from 'fs';
 
-const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+function Navbar() {
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleLinkClick = (e: any, Link: string) => {
+    setActiveLink(Link)
+  };
 
   return (
-    <nav className="container-fluid sticky top-0 bg-white p-4 sm:p-6 flex justify-between items-center transition-all duration-500 xl:h-20 z-50 shadow-md">
-      <Link to="/Home">
+    <div className='container-fluid sticky top-0 bg-white p-4 sm:p-6 flex justify-between items-center transition-all duration-500 xl:h-20 z-50 shadow-md'>
+      <div>
         <img src="Images/logoname.png" alt="Logo" className="h-12 sm:h-16" />
-      </Link>
-
-      {/* Hamburger & Close Menu Icon */}
-      <div className="flex flex-row-reverse mobile_screen">
-        <div className="mt-2 p-2">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="focus:outline-none focus:bg-gray-300 rounded bg-green-500"
-          >
-            {isOpen ? (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            ) : (
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                ></path>
-              </svg>
-            )}
-
-          </button>
-        </div>
-        <div className="flex">
-          {[{ path: "/login", name: "Log In", className: "bg-[#3FC041] text-white rounded-md tracking-widest m-auto p-2" }].map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`block sm:inline-block text-[#333333] hover:text-gray-300 px-2 sm:px-4 py-1 ${location.pathname === link.path
-                ? "border-b-2 border-green-500"
-                : ""
-                } font-semibold ${link.className}`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          {/* <Translator />   */}
-
-        </div>
       </div>
+      <div className='desktop_view'>
+        <ul className='flex justify-between space-x-10 font-semibold'>
+          <li className={activeLink === '#home' ? 'border-b-2 border-green-500' : ''}><a href='#home' onClick={(e) => handleLinkClick(e, '#home')}
+            className="py-2 hover:text-green-500">Home</a></li>
 
-      {/* Navigation links */}
-      <div
-        className={`sm:flex justify-center sm:space-x-4 mt-4 sm:mt-0 ${isOpen ? "block" : "hidden"
-          } bg-white sm:bg-transparent p-4 sm:p-0 rounded shadow sm:shadow-none`}
-      >
-        {[
-          { path: "/Home", name: "Home" },
-          { path: "/tech", name: "Our Technology" },
-          { path: "/what", name: "Team" },
-          { path: "/blog", name: "Blog" },
-          { path: "/contact", name: "Contact Us" },
+          <li className={activeLink === '#about' ? 'border-b-2 border-green-500' : ''}><a href='#about' onClick={(e) => handleLinkClick(e, '#about')}>About</a></li>
 
-        ].map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            className={`block sm:inline-block text-[#333333] hover:text-gray-300 px-2 sm:px-4 py-1 ${location.pathname === link.path
-              ? "border-b-2 border-green-500"
-              : ""
-              } font-semibold ${link}`}
-          >
-            {link.name}
-          </Link>
-        ))}
+          <li className={activeLink === '#tech' ? 'border-b-2 border-green-500' : ''}><a href='#tech' onClick={(e) => handleLinkClick(e, '#tech')}>Our Technology</a></li>
+
+          <li className={activeLink === '#team' ? 'border-b-2 border-green-500' : ''}><a href='#team' onClick={(e) => handleLinkClick(e, '#team')}>Team</a></li>
+
+          <li className={activeLink === '#blog' ? 'border-b-2 border-green-500' : ''}><a href='#blog' onClick={(e) => handleLinkClick(e, '#blog')}>Blog</a></li>
+
+          <li className={activeLink === '#contact' ? 'border-b-2 border-green-500' : ''}><a href='#contact' onClick={(e) => handleLinkClick(e, '#contact')}>Contact Us</a></li>
+        </ul>
       </div>
-
-      <div className="flex items-center justify-center mobile">
-        {[{ path: "/login", name: "Log In", className: "bg-[#3FC041] text-white rounded-md tracking-widest m-auto p-2" }].map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            className={`block text-[#333333] hover:text-gray-300 px-2 sm:px-4 py-1 ${location.pathname === link.path
-              ? "border-b-2 border-green-500"
-              : ""
-              } font-semibold ${link.className}`}
-          >
-            {link.name}
-          </Link>
-        ))}
+      <div className='flex'>
+        <button className="bg-[#3FC041] text-white rounded-md tracking-widest m-auto p-2"><a href="/login">Log In</a></button>
         <Translator />
       </div>
-    </nav>
-  );
-};
+    </div>
+  )
+}
 
-export default Navbar;
+export default Navbar

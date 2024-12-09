@@ -6,6 +6,8 @@
   padding: 10px; /* Optional: Add padding around the container */
   margin-right: 150px;
   margin-left: 150px;
+  margin-top: 20px;
+  margin-bottom: 150px;
 }
 
 .legend {
@@ -38,4 +40,34 @@ button {
   color: white;
   padding: 2px;
   margin: 5px;
+}
+@media screen and (max-width: 480px) {
+  .cardss {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align the stacked cards */
+    width: 80%;
+    margin: auto;
+  }
+
+  .legend {
+    flex: 1 1 100%;
+    margin: 10px;
+  }
+
+  .legend img {
+    height: 120px;
+  }
+
+  .titlee {
+    font-size: 16px;
+  }
+
+  .legend p {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
 }

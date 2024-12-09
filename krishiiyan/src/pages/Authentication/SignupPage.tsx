@@ -11,7 +11,8 @@ import OTPVerification from "../farmer/OTPVerification";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Api from "../../Services/Api";
-
+import { InputAdornment } from "@mui/material";
+import './Signup.css'
 
 let check1 = true;
 
@@ -197,137 +198,156 @@ const SignupPage = () => {
   };
 
   return (
-    <section className="bg-gray-50 min-h-screen flex items-center justify-center">
-      <div className="bg-gray-100 flex flex-col md:flex-row rounded-2xl shadow-lg max-w-3xl p-5 items-center">
-        {/* Image Container for Mobile */}
-        <div className="md:hidden w-1/4">
-          <img className="rounded-lg" src="Images/logo.png" alt="Ellipse" />
-        </div>
+    <>
+      <img src="/Images/logoname.png" alt="logo-loading" className="h-16 w-40 m-5" />
+      <section className="min-h-screen flex items-center justify-center">
+        <div className="flex flex-col md:flex-row rounded-2xl">
+          {/* Image Container for Mobile */}
+          <div className="md:hidden w-28">
+            <img className="rounded-lg" src="Images/logo.png" alt="Ellipse" />
+          </div>
 
-        {/* Form Container */}
-        <div className="md:w-1/2 px-8 md:px-16">
-          <h2 className="font-bold text-2xl text-[#002D74]">Sign Up</h2>
-          <form
-            onSubmit={handleSubmit}
-            noValidate
-            className="flex flex-col gap-4"
-          >
-            <Autocomplete
-              className="p- mt- rounded-xl border"
-              options={nameSuggestions}
-              getOptionLabel={(option) => option.name}
-              onChange={handletypechange}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="type"
-                  label="Type of the Organization"
-                  name="type"
-                  autoComplete="type"
-                  autoFocus
-                />
-              )}
-            />
-            <TextField
-              className="p- rounded-xl border"
-              type="text"
-              margin="normal"
-              required
-              fullWidth
-              id="name"
-              label="Name of Organization"
-              name="name"
-              autoComplete="name"
-              autoFocus
-            />
-            <TextField
-              className="p- rounded-xl border"
-              type="tel"
-              margin="normal"
-              required
-              fullWidth
-              name="phone"
-              label="Phone Number (e.g 9835717655)"
-              id="phone"
-              autoComplete="current-phone"
-              onChange={handleMobileChange}
-            />
-            <TextField
-              className="p- rounded-xl border"
-              type="email"
-              margin="normal"
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              onChange={handleEmailChange}
-              inputProps={{
-                pattern:
-                  "^(\\w+@(gmail\\.com|info|krishiyan|@\\.com|contact))?$",
-                title:
-                  "Please enter a valid email address with domains @gmail.com, @info, or @krishiyan.com",
-              }}
-            />
-            <TextField
-              className="rounded-xl border"
-              type="password"
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              id="password"
-              autoComplete="current-password"
-              onChange={handlePasswordChange}
-            />
-            <p className="text-sm text-gray-500">{message}</p>
-
-            <Button
-              className="bg-[#05AB2A] rounded-xl text-white py-2 hover:scale-105 duration-300"
-              type="submit"
-              fullWidth
-              variant="contained"
+          {/* Form Container */}
+          <div className="md:w-1/2 px-8 md:px-16">
+            <h2 className="font-bold text-2xl text-left">Sign Up</h2>
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="flex flex-col gap-4"
             >
-              Sign Up
-            </Button>
-            <p className="text-black">By continuing, you agree to KrishiYan's <Link onClick={() => navigate("/terms")} className="hover:underline cursor-pointer text-black">Terms & Conditions</Link>. Read our <Link onClick={() => navigate("/privacy")} className="hover:underline cursor-pointer text-black"
-            >Privacy Policy.</Link></p>
+              <Autocomplete
+                className="rounded-xl border"
+                options={nameSuggestions}
+                getOptionLabel={(option) => option.name}
+                onChange={handletypechange}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="type"
+                    placeholder="Type of the Organization"
+                    name="type"
+                    autoComplete="type"
+                    autoFocus
+                    InputProps={{
+                      ...params.InputProps,
+                      startAdornment: (
+                        <>
+                          <InputAdornment position="start">
+                            <img
+                              src="/Images/user.png" // Replace with the actual image path or URL
+                              alt="User Icon"
+                              style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
+                            />
+                          </InputAdornment>
+                          {params.InputProps.startAdornment}
+                        </>
+                      ),
+                    }}
+                    className="type-field"
+                  />
+                )}
+              />
+              <TextField
+                className="p- rounded-xl border"
+                type="text"
+                margin="normal"
+                required
+                fullWidth
+                id="name"
+                label="Name of Organization"
+                name="name"
+                autoComplete="name"
+                autoFocus
+              />
+              <TextField
+                className="p- rounded-xl border"
+                type="tel"
+                margin="normal"
+                required
+                fullWidth
+                name="phone"
+                label="Phone Number (e.g 9835717655)"
+                id="phone"
+                autoComplete="current-phone"
+                onChange={handleMobileChange}
+              />
+              <TextField
+                className="p- rounded-xl border"
+                type="email"
+                margin="normal"
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+                onChange={handleEmailChange}
+                inputProps={{
+                  pattern:
+                    "^(\\w+@(gmail\\.com|info|krishiyan|@\\.com|contact))?$",
+                  title:
+                    "Please enter a valid email address with domains @gmail.com, @info, or @krishiyan.com",
+                }}
+              />
+              <TextField
+                className="rounded-xl border"
+                type="password"
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                id="password"
+                autoComplete="current-password"
+                onChange={handlePasswordChange}
+              />
+              <p className="text-sm text-gray-500">{message}</p>
 
-            <Grid container>
-              <Grid item>
-                <Typography variant="body2">
-                  Already have an account?{" "}
-                  <Link
-                    variant="subtitle2"
-                    onClick={() => navigate("/login")}
-                    sx={{ cursor: "pointer" }}
-                  >
-                    Sign In
-                  </Link>
-                </Typography>
+              <Button
+                className="bg-[#05AB2A] rounded-xl text-white py-2 hover:scale-105 duration-300"
+                type="submit"
+                fullWidth
+                variant="contained"
+              >
+                Sign Up
+              </Button>
+              <p className="text-black">By continuing, you agree to KrishiYan's <Link onClick={() => navigate("/terms")} className="hover:underline cursor-pointer text-black">Terms & Conditions</Link>. Read our <Link onClick={() => navigate("/privacy")} className="hover:underline cursor-pointer text-black"
+              >Privacy Policy.</Link></p>
+
+              <Grid container>
+                <Grid item>
+                  <Typography variant="body2">
+                    Already have an account?{" "}
+                    <Link
+                      variant="subtitle2"
+                      onClick={() => navigate("/login")}
+                      sx={{ cursor: "pointer" }}
+                    >
+                      Sign In
+                    </Link>
+                  </Typography>
+                </Grid>
               </Grid>
-            </Grid>
-          </form>
+            </form>
+          </div>
+
+          {/* Image Container for Desktop */}
+          <div className="hidden md:block md:w-1/2">
+            <img className="rounded-2xl" src="Images/logo.png" alt="Ellipse" />
+          </div>
         </div>
 
-        {/* Image Container for Desktop */}
-        <div className="hidden md:block md:w-1/2">
-          <img className="rounded-2xl" src="Images/logo.png" alt="Ellipse" />
-        </div>
-      </div>
-
-      <OTPVerification
-        open={open}
-        handleClose={handleClose}
-        handleOTPVerified={handleOTPVerified}
-        Phone={email1}
-      />
-    </section>
+        <OTPVerification
+          open={open}
+          handleClose={handleClose}
+          handleOTPVerified={handleOTPVerified}
+          Phone={email1}
+        />
+      </section>
+    </>
   );
 };
 

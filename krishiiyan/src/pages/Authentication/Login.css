@@ -1,0 +1,33 @@
+.custom-textfield {
+    width: 100%; /* Desired width */
+    height: 40px; /* Desired height */
+    border-radius: 10px;
+}
+.custom-textfield:focus, .custom-textfield:active{
+    background-color: white;
+}  
+.custom-textfield .MuiInputBase-root {
+    height: 100%; /* Ensures the input field spans the full height of the container */
+}
+.password-custom{
+    width: 100%; /* Desired width */
+    height: 40px; /* Desired height */
+    border-radius: 10px;
+    text-align: right;
+}
+.password-custom .MuiInputBase-root {
+    height: 100%; /* Ensures the input field spans the full height of the container */
+}
+.grid-width{
+    width: 100%;
+}
+.login-form{
+   width: 100%;
+}
+.login-btn{
+    background-color: #3291FF;
+}
+.forgot-pwd{
+    color: #616161;
+    text-decoration: none;
+}

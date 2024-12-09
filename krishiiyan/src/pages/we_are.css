@@ -4,11 +4,12 @@ body {
 }
 @media screen and (max-width: 767px) {
   .cont {
-    display: grid; /* Switch to grid layout */
-    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-    gap: 20px; /* Space between items */
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 40px 20px; 
     padding: 10px;
     justify-content: center;
+    /* align-items: center; */
   }
   .cont > div {
     width: 80px;

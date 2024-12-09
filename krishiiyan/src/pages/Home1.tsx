@@ -26,7 +26,7 @@ const Who1: React.FC<Who1Props> = () => {
     };
 
     return (
-        <div>
+        <section id="home">
             <Carousel showThumbs={false} infiniteLoop swipeable>
                 <div style={{ position: "relative", overflow: "hidden" }}>
                     <div>
@@ -60,7 +60,7 @@ const Who1: React.FC<Who1Props> = () => {
           </div> */}
                 </div>
             </Carousel>
-        </div>
+        </section>
     );
 };
 

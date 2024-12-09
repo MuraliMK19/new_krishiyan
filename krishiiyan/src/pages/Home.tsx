@@ -9,6 +9,11 @@ import Cultivating from "./Cultivating";
 import Tech from "./Tech";
 import Team from "./Team";
 import CardCarousel from "./CardCarousel";
+import AppPromo from "./Apppromo";
+import Our_support from "./Our_support";
+import NewContact from "./NewContact";
+import Servicescenterlogo from "./Servicescenterlogo";
+import { Route, Routes } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -21,9 +26,14 @@ const Home = () => {
       <We_are_best />
       <Cultivating />
       <Tech />
+      <Servicescenterlogo />
       <Team />
       <CardCarousel />
-      {/* <Footer /> */}
+      <AppPromo />
+      <Our_support />
+      <NewContact />
+      <Footer />
+
     </>
   );
 };

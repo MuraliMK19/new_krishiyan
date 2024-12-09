@@ -1,0 +1,17 @@
+.service-group {
+  position: absolute;
+}
+
+.fpo-services {
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+}
+
+.industry-services {
+  top: 50%;
+  right: 20%;
+  transform: translate(50%, -50%);
+}
