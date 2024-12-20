@@ -1,5 +1,27 @@
 .center-logo {
   position: relative;
 }
-.points {
+
+@media screen and (max-width: 767px){
+.mobile-boxes{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px; /* Space between boxes */
+  justify-items: center; /* Centers all items horizontally */
+  text-align: center;
+  padding: 20px;
+  /* width: 115px; */
+}
+.wide1, .wide2
+{
+ width: 115px;
+  }
+.service-box{
+  box-shadow: 0 0 5px #3fc041;
+  /* width: 115px; */
+}
+.service-box1{
+  box-shadow: 0 0 5px #3390FF;
+  /* width: 115px; */
+}
 }

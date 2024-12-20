@@ -45,14 +45,9 @@ import Premium from "./pages/crop_advisary/premium";
 import MandiPricesHandler from "./adminUserHandlers/MandiPricesHandler";
 import MandiPricesAdmin from "./pages/crop_advisory_admin/mandiPricesAdmin";
 import Home from "./pages/Home";
-import Blog from "./pages/Blog";
-import OurTech from "./pages/OurTech";
-import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import NewRegestrationAdmin from "./pages/crop_advisory_admin/NewRegestrationAdmin";
 import DashBoardNew from "./pages/farmer/DashBoardNew";
-import Fponational from "./Components/Fponational";
-import Fporegister from "./Components/Fporegister";
 import PageSelector from "./pages/crop_advisary/ferticalselector";
 import ShowData from "./Components/ShowData";
 import AccountSetting from "./Components/AccountSetting";
@@ -97,14 +92,10 @@ function App() {
     <div className="App font-roboto box-border m-0 p-0">
       {/* <BrowserRouter> */}
       <Routes>
-        <Route path="/FPOnational" element={<Fponational />} />
-        <Route path="/fporegister" element={<Fporegister />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
 
 
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/FPOnational" element={<Fponational />} />
-        <Route path="/fporegister" element={<Fporegister />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/Password-reset" element={<ForgotPasswordLink />} />

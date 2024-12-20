@@ -19,18 +19,16 @@ function Home2() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
             >
-                <div className='xl:mt-[-80px] ml-[-1300px]'>
-                    <img src="./Images/double-bg.png" alt="loading" className='h-24 w-24 md:h-28 md:w-28' />
-                </div>
+
                 <motion.div
-                    className="bg-[#3DB73E] opacity-90 rounded-xl rounded-br-none p-4 md:p-10 h-[40vh]"
+                    className="bg-[#3DB73E] opacity-90 rounded-xl p-4 md:p-10 h-[40vh]"
                     initial={{ scale: 0.9 }}
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5 }}
                 >
                     <h1 className='text-2xl md:text-4xl pb-2'>About Us</h1>
-                    <p className='text-sm md:text-xl text-opacity-100'>
-                        Wetacre Sustainable Solutions Private Limited is a Gujarat-based startup founded in 2021 with the motive to encourage farming activity by integrating technology and real-time data to support farmers through Farmer Producer Organizations (FPOs). Our main objective is nurturing FPOs for systematic management of farmers and increasing the farmer engagement. The company works in the Phygital model, where Farmers can get seamless services from local FPOs through Krishiyan assisted platform for all type of services.
+                    <p className='text-sm md:text-[22px] xl:leading-9 text-opacity-100'>
+                        KrishiYan by WetAcre Sustainable Solutions is a comprehensive, cloud-based agricultural platform designed to revolutionize farming and agribusiness management. Built to support both farmers and FPOs, KrishiYan integrates advanced data analytics, real-time advisory, and streamlined logistics, all accessible through a centralized digital interface. By leveraging cloud technology, KrishiYan offers secure, scalable, and on-demand tools for every stage of the farming cycle, from cultivation to market linkage.
                     </p>
                 </motion.div>
             </motion.div>

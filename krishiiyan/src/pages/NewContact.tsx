@@ -123,7 +123,7 @@ function NewContact() {
                                 <img src="/Images/material-symbols_mail.png" alt="loading" />
                             </div>
                             <div>
-                                <h1 className='font-semibold text-xl'>Write Email</h1>
+                                <h1 className='font-semibold text-xl'>Email Us</h1>
                                 <p>info@krishiyan.com</p>
                             </div>
                         </div>
@@ -132,7 +132,7 @@ function NewContact() {
                                 <img src="/Images/mdi_location.png" alt="loading" />
                             </div>
                             <div>
-                                <h1 className='font-semibold text-xl'>Visit Anytime</h1>
+                                <h1 className='font-semibold text-xl'>Contact Us</h1>
                                 <p>WetAcre Sustainable Solution Private Limited, <br
                                 /> CrAdLE, Village Bhat, Gandhinagar, Gujarat, <br />382428 - India</p>
                             </div>

@@ -19,7 +19,7 @@ function ScrollToTopArrow() {
 
     return (
         <div
-            className={`fixed bottom-4 right-4 rounded-full bg-green-700 text-white flex items-center justify-center w-12 h-12 cursor-pointer opacity-0 transition-opacity duration-300 ease-in-out ${showArrow ? 'opacity-100' : ''}`}
+            className={`fixed bottom-4 right-4 rounded-full bg-[#3fc041] text-white flex items-center justify-center w-12 h-12 cursor-pointer opacity-0 transition-opacity duration-300 ease-in-out ${showArrow ? 'opacity-100' : ''}`}
             onClick={handleClick}
         >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10">

@@ -251,36 +251,62 @@ const SignupPage = () => {
                 )}
               />
               <TextField
-                className="p- rounded-xl border"
+                className="p- rounded-xl border type-field"
                 type="text"
                 margin="normal"
                 required
                 fullWidth
                 id="name"
-                label="Name of Organization"
+                placeholder="Name of Organization"
                 name="name"
-                autoComplete="name"
                 autoFocus
+                autoComplete="name"
+                InputProps={{
+                  startAdornment: (
+                    <>
+                      <InputAdornment position="start">
+                        <img
+                          src="/Images/user.png" // Replace with the actual image path or URL
+                          alt="User Icon"
+                          style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
+                        />
+                      </InputAdornment>
+                    </>
+                  ),
+                }}
               />
               <TextField
-                className="p- rounded-xl border"
+                className="p- rounded-xl border type-field"
                 type="tel"
                 margin="normal"
                 required
                 fullWidth
                 name="phone"
-                label="Phone Number (e.g 9835717655)"
+                placeholder="Phone Number"
                 id="phone"
                 autoComplete="current-phone"
                 onChange={handleMobileChange}
+                InputProps={{
+                  startAdornment: (
+                    <>
+                      <InputAdornment position="start">
+                        <img
+                          src="/Images/user.png" // Replace with the actual image path or URL
+                          alt="User Icon"
+                          style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
+                        />
+                      </InputAdornment>
+                    </>
+                  ),
+                }}
               />
               <TextField
-                className="p- rounded-xl border"
+                className="p- rounded-xl border type-field"
                 type="email"
                 margin="normal"
                 fullWidth
                 id="email"
-                label="Email Address"
+                placeholder="Email Address"
                 name="email"
                 autoComplete="email"
                 autoFocus
@@ -291,18 +317,44 @@ const SignupPage = () => {
                   title:
                     "Please enter a valid email address with domains @gmail.com, @info, or @krishiyan.com",
                 }}
+                InputProps={{
+                  startAdornment: (
+                    <>
+                      <InputAdornment position="start">
+                        <img
+                          src="/Images/mail.png" // Replace with the actual image path or URL
+                          alt="User Icon"
+                          style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
+                        />
+                      </InputAdornment>
+                    </>
+                  ),
+                }}
               />
               <TextField
-                className="rounded-xl border"
+                className="rounded-xl border type-field"
                 type="password"
                 margin="normal"
                 required
                 fullWidth
                 name="password"
-                label="Password"
+                placeholder="Password"
                 id="password"
                 autoComplete="current-password"
                 onChange={handlePasswordChange}
+                InputProps={{
+                  startAdornment: (
+                    <>
+                      <InputAdornment position="start">
+                        <img
+                          src="/Images/lock.png" // Replace with the actual image path or URL
+                          alt="User Icon"
+                          style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
+                        />
+                      </InputAdornment>
+                    </>
+                  ),
+                }}
               />
               <p className="text-sm text-gray-500">{message}</p>
 

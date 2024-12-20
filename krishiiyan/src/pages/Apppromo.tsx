@@ -10,11 +10,11 @@ const AppPromo = () => {
             <div className="app-promo-content">
                 <h1>
                     <span className="highlight bg-gradient-to-r from-[#3390FF] via-[#38A1BB] to-[#3FC041] bg-clip-text text-transparent">Krishiyan App</span><br />
-                    <span className='highlight1'>Empowering Farmers Anytime, Anywhere</span>
+                    <span className='highlight1'>Cloud-Powered Integrated Solutions for FPOs</span>
                 </h1>
-                <p className='text-[#616161] xl:p-5'>Stay informed, connected, and in control with the Krishiyan app.</p>
+                <p className='text-[#616161] xl:p-5'>Seamless FPO Management Tool</p>
                 <p className="download-text xl:pl-5">Download the App Today</p>
-                <div className="store-buttons">
+                <div className="store-buttons xl:ml-5">
                     <img src="/Images/goimage1.png" alt="Google Play" />
                 </div>
             </div>

@@ -2,35 +2,36 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
 @media screen and (max-width: 767px) {
-  .cont {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 40px 20px; 
-    padding: 10px;
-    justify-content: center;
-    /* align-items: center; */
-  }
-  .cont > div {
-    width: 80px;
-  }
-  .cont > div:nth-child(1) {
-    justify-self: center; /* Start in the first column */
-    padding-top: 10px;
-  }
-  .cont > div:nth-child(2) {
-    justify-self: center;
-    padding-top: 10px;
-  }
-  .cont > div:nth-child(3) {
-    justify-self: center;
-    padding-top: 10px;
-  }
-  .cont > div:nth-child(4) {
-    justify-self: center;
+  .first_cards {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
   }
 
-  .cont > div:nth-child(5) {
-    justify-self: center;
+  .second_cards {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .first_cards {
+    display: inline-flex;
+    /* justify-content: space-between; */
+  }
+
+  .first_cards>div {
+    margin: 50px;
+  }
+
+  .second_cards>div {
+    margin: 50px;
+  }
+
+  .second_cards {
+    display: inline-flex;
+    /* justify-content: space-around; */
   }
 }

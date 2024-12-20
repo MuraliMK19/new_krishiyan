@@ -30,9 +30,10 @@ const Who1: React.FC<Who1Props> = () => {
             <Carousel showThumbs={false} infiniteLoop swipeable>
                 <div style={{ position: "relative", overflow: "hidden" }}>
                     <div>
-                        <h2 className="text-2xl m-2 pt-5 text-blue-700">Welcome to the World of Agriculture</h2>
-                        <p className="mb-2 text-4xl p-5 font-extrabold">Empowering Farmers, Enriching</p>
-                        <p className="mb-2 text-4xl font-extrabold">communities: <span className=" bg-gradient-to-r from-[#3FC041] via-[#38A1BB] to-[#3390FF] bg-clip-text text-transparent">The Krishiyan Way</span></p>
+                        <h2 className="m-2 pt-5 text-blue-700 font-serif text-3xl"><span className="text-[#3FC041]">Krishi</span>Yan</h2>
+                        <p className="mb-2 text-4xl p-5 font-extrabold"><span className=" bg-gradient-to-r from-[#3FC041] via-[#38A1BB] to-[#3390FF] bg-clip-text text-transparent"> </span>
+                            Cloud-Powered Integrated Solutions for FPOs</p>
+                        {/* <p className="mb-2 text-4xl font-extrabold">communities: <span className=" bg-gradient-to-r from-[#3FC041] via-[#38A1BB] to-[#3390FF] bg-clip-text text-transparent">The Krishiyan Way</span></p> */}
                         <button className="bg-[#3FC041] hover:bg-blue-700 rounded-3xl text-white py-2 px-4 m-5">Learn more <span className="font-bold">→</span></button>
                         <div className="flex mt-[-20px]">
                             <img src="/Images/image-3.png" alt="loading" className="h-[250px] p-5 xl:ml-10 " />
@@ -44,23 +45,23 @@ const Who1: React.FC<Who1Props> = () => {
                     </div>
                 </div>
                 <div style={{ position: "relative", overflow: "hidden" }}>
-                    <img src={"/Images/car2.jpg"} alt="Slide 2 Image" style={imgStyle} />
-                    {/* <div style={overlayStyle}>
-            <h2 className="text-xl font-bold mb-2">Slide 2 Title</h2>
-            <p className="mb-2">Description for slide 2 goes here.</p>
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Explore</button>
-          </div> */}
+                    {/* <img src={"/Images/car2.jpg"} alt="Slide 2 Image" style={imgStyle} />
+                    <div style={overlayStyle}>
+                        <h2 className="text-xl font-bold mb-2">Slide 2 Title</h2>
+                        <p className="mb-2">Description for slide 2 goes here.</p>
+                        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Explore</button>
+                </div> */}
                 </div>
-                <div style={{ position: "relative", overflow: "hidden" }}>
+                {/* <div style={{ position: "relative", overflow: "hidden" }}>
                     <img src={"/Images/car3.jpg"} alt="Slide 3 Image" style={imgStyle} />
-                    {/* <div style={overlayStyle}>
+                    <div style={overlayStyle}>
             <h2 className="text-xl font-bold mb-2">Slide 3 Title</h2>
             <p className="mb-2">Description for slide 3 goes here.</p>
             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Discover More</button>
-          </div> */}
-                </div>
+          </div>
+                </div> */}
             </Carousel>
-        </section>
+        </section >
     );
 };
 

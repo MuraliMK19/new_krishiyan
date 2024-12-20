@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import OurTech from "../pages/OurTech";
 import ScrollToTopArrow from "./ScrollToTopArrow";
 import Terms from "../pages/Terms";
 
@@ -33,7 +32,7 @@ interface Translations {
 const translations: Translations = {
   en: {
     logoAlt: "Company Logo",
-    tagline: "WetAcre Sustainable Solutions",
+    tagline: "WetAcre Sustainable Solutions Private Limited",
     readMore: "Read More",
     quickLinks: "Quick Links",
     home: "Home",
@@ -57,6 +56,7 @@ const translations: Translations = {
     logoAlt: "কোম্পানীৰ লোগো",
     tagline: "WetAcre স্থিতিশীল সমাধান",
     readMore: "অধিক পঢ়ক",
+
     quickLinks: "দ্ৰুত লিংকসমূহ",
     home: "ঘৰ",
     who: "আমরা কোন?",
@@ -444,13 +444,13 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#C0DDFF] text-[#333333] p-4 sm:p-8">
-      <div className=" mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className=" mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Logo and tagline */}
         <div>
           <img
             src="Images/logoname.png"
             alt={logoAlt}
-            className="w-[150px] sm:w-[200px] h-[62px] sm:h-[82px] mb-4 mt-[-20px] mx-10"
+            className="w-[250px] sm:w-[200px] h-[100px] sm:h-[82px] mb-4 m-auto"
           />
           <p className="mb-4">{tagline}</p>
           <a
@@ -461,74 +461,40 @@ const Footer = () => {
           </a>
           <p className="m-5 ml-10 text-left text-green-500">Follow us on</p>
           <div className="flex space-x-3 ml-12 mt-[-10px]">
-            <img src="/Images/devicon-plain_linkedin.png" alt="loading" className="h-6 w-6" />
-            <img src="/Images/akar-icons_facebook-fill.png" alt="loading" className="h-6 w-6" />
+            <img src="/Images/devicon-plain_linkedin.png" alt="loading" className="h-6 w-6 hover:cursor-pointer" onClick={() => window.open("https://www.linkedin.com/company/wetacre-sustainable-solution/posts/?feedView=all", "_blank")} />
+            <img src="/Images/akar-icons_facebook-fill.png" alt="loading" className="h-6 w-6 hover:cursor-pointer" onClick={() => window.open("https://www.facebook.com/ankit.mudpe.7?mibextid=ZbWKwL", "_blank")} />
           </div>
         </div>
 
         {/* Quick Links */}
-        <div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-8 mr-7">
+        <div className="m-auto w-1/2">
+          <h2 className="text-xl sm:text-2xl font-bold m-auto p-5">
             {quickLinks}
           </h2>
-          <ul className="space-y-4 text-lg text-left mx-20">
-            <li>
-              <a href="#home" className="hover:underline">Home</a>
-            </li>
-            <li>
-              <a href="#about" className="hover:underline">About</a>
-            </li>
-            <li>
-              <a href="#tech" className="hover:underline">Our Technology</a>
-            </li>
-            <li>
-              <a href="#team" className="hover:underline">Team</a>
-            </li>
-            <li>
-              <a href="#blog" className="hover:underline">Blog</a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:underline">Contact Us</a>
-            </li>
+          <ul className="text-lg flex justify-between ">
+            <div className="w-1/2  flex flex-col gap-y-5">
+              <li>
+                <a href="#home" className="hover:underline">Home</a>
+              </li>
+              <li>
+                <a href="#about" className="hover:underline">About</a>
+              </li>
+              <li>
+                <a href="#tech" className="hover:underline">Our Technology</a>
+              </li>
+            </div>
+            <div className="w-1/2 flex flex-col gap-y-5">
+              <li>
+                <a href="#team" className="hover:underline">Team</a>
+              </li>
+              <li>
+                <a href="#blog" className="hover:underline">Blog</a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:underline">Contact Us</a>
+              </li>
+            </div>
           </ul>
-        </div>
-
-        {/* Get in Touch */}
-
-        <div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-8 mr-24 ">
-            Help
-          </h2>
-
-          <ul className="space-y-4 text-lg text-left mx-20">
-            <li>
-              <a href="#contact" className="hover:underline">Customer Support</a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:underline">FAQ's</a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:underline">Contact</a>
-            </li>
-            <li>
-              <a href="/privacy" className="hover:underline">Policy</a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Location */}
-        <div>
-          <h2 className="text-xl sm:text-2xl font-bold mb-4">Subscribe</h2>
-          <div className="flex rounded-full overflow-hidden border-2 border-blue-500 h-10 w-[335px]">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="px-4 py-2 text-black outline-none h-10"
-            />
-            <button className="bg-blue-500 text-white px-4 py-2 m-0 mr-0 w-32 hover:bg-blue-600 h-10">
-              Subscribe
-            </button>
-          </div>
         </div>
       </div>
 

@@ -9,7 +9,7 @@ function Mission_vision() {
                 <div className="bg-[#3390FF] p-10 xl:w-[550px] rounded-xl xl:h-[320px] Mission_box">
                     <h1 className="text-2xl font-bold mb-4">Mission</h1>
                     <p>
-                        Krishiyan is dedicated to transforming agriculture by empowering farmers with tools, knowledge, and market access to boost yields and secure fair prices. We streamline supply chains with technology and partnerships, ensuring efficient farm-to-market transactions, while fostering collaboration among farmers, dealers, industries, and buyers for shared success.
+                        By harnessing the power of cloud computing, KrishiYan offers farmers and FPOs a secure, scalable solution for digital farming. Its cloud-based capabilities enable real-time data access, efficient management, and market connectivity, all while supporting a sustainable and profitable farming ecosystem.
                     </p>
                 </div>
 

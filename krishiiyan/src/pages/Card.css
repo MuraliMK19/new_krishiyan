@@ -1,39 +1,64 @@
 .cardss {
   display: flex;
-  justify-content: space-between; /* Add proper spacing between cards */
-  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  justify-content: space-between;
+  flex-direction: row;
+  /* Add proper spacing between cards */
+  /* flex-wrap: wrap; */
+  /* Allow wrapping for responsiveness */
   background-color: white;
-  padding: 10px; /* Optional: Add padding around the container */
+  padding: 10px;
+  /* Optional: Add padding around the container */
   margin-right: 150px;
   margin-left: 150px;
   margin-top: 20px;
   margin-bottom: 150px;
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x mandatory;
 }
 
 .legend {
-  flex: 1 1 calc(33.33% - 40px); /* Adjust card width for 3 cards with margins */
-  margin: 20px; /* Space between cards */
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Enhance shadow */
-  border: 1px solid #ddd; /* Optional: Card border */
-  border-radius: 10px; /* Optional: Rounded corners */
-  overflow: hidden; /* Prevent overflow issues */
-  background-color: #f9f9f9; /* Optional: Background for each card */
+  flex: 1 1 calc(33.33% - 40px);
+  /* display: flex; */
+  /* Adjust card width for 3 cards with margins */
+  margin: 20px;
+  scroll-snap-align: center;
+  /* Space between cards */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Enhance shadow */
+  border: 1px solid #ddd;
+  /* Optional: Card border */
+  border-radius: 10px;
+  /* Optional: Rounded corners */
+  overflow: hidden;
+  /* Prevent overflow issues */
+  background-color: #f9f9f9;
+  /* Optional: Background for each card */
   text-align: left;
 }
+
 .legend img {
-  width: 100%; /* Ensure images fit their containers */
-  height: 200px; /* Set a consistent height for all images */
+  width: 100%;
+  /* Ensure images fit their containers */
+  height: 200px;
+  /* Set a consistent height for all images */
   padding: 15px;
-  object-fit: cover; /* Crop and scale images proportionally */
+  object-fit: cover;
+  /* Crop and scale images proportionally */
 }
+
 .titlee {
   font-weight: bold;
   font-size: 20px;
 }
+
 .legend p {
-  padding: 10px; /* Add spacing inside the card */
-  color: #333; /* Optional: Text color */
+  padding: 10px;
+  /* Add spacing inside the card */
+  color: #333;
+  /* Optional: Text color */
 }
+
 button {
   background-color: #3fc041;
   border-radius: 5px;
@@ -41,10 +66,13 @@ button {
   padding: 2px;
   margin: 5px;
 }
+
 @media screen and (max-width: 480px) {
   .cardss {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center align the stacked cards */
+    flex-direction: column;
+    /* Stack cards vertically */
+    align-items: center;
+    /* Center align the stacked cards */
     width: 80%;
     margin: auto;
   }

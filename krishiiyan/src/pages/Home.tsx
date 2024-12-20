@@ -14,13 +14,14 @@ import Our_support from "./Our_support";
 import NewContact from "./NewContact";
 import Servicescenterlogo from "./Servicescenterlogo";
 import { Route, Routes } from "react-router-dom";
-
+import Home0 from './Home0'
 const Home = () => {
   return (
     <>
       <Preloader />
       <Navbar />
-      <Home1 />
+      <Home0 />
+      {/* <Home1 /> */}
       <Home2 />
       <Mission_vision />
       <We_are_best />

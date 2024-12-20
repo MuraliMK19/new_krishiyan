@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import React from "react";
 import axios from "axios";
 import { extractCodeFromDriveLink } from "../../handleImageCode";
-import ImageComponent from "../ImageComponent";
 
 interface PopupProps {
   isOpen: boolean;

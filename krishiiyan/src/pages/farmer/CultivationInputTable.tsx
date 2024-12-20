@@ -19,13 +19,13 @@ import DialogContentText from "@mui/material/DialogContentText";
 import TableSortLabel from "@mui/material/TableSortLabel";
 
 const TABLE_HEAD = [
-    { id: "id", label: "S.No", alignRight: false },
-    { id: "areaCode", label: "Area Code", alignRight: false },
-    { id: "area", label: "Area", alignRight: false },
-    { id: "type", label: "Type", alignRight: true },
-    { id: "majorCrops", label: "Major Crops", alignRight: true },
-   
-  ];
+  { id: "id", label: "S.No", alignRight: false },
+  { id: "areaCode", label: "Area Code", alignRight: false },
+  { id: "area", label: "Area", alignRight: false },
+  { id: "type", label: "Type", alignRight: true },
+  { id: "majorCrops", label: "Major Crops", alignRight: true },
+
+];
 const CultivationInputTable = () => {
   const [rows, setRows] = useState([
     { id: 1, areaCode: "", area: "", type: "", majorCrops: "" },
@@ -156,128 +156,128 @@ const CultivationInputTable = () => {
         </div>
         <TableRow> </TableRow>
         <TableContainer sx={{ minWidth: 800 }}>
-        <Table>
-          <TableHead>
-          <TableRow>
-              <TableCell padding="checkbox">
-              </TableCell>
-              {TABLE_HEAD?.map((headCell) => (
-                <TableCell key={headCell.id}>
-                  <TableSortLabel hideSortIcon>{headCell.label}</TableSortLabel>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell padding="checkbox">
                 </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row, i) => {
-              return (
-                <div>
-                  <TableRow>
-                    {isEdit ? (
-                      <div>
-                        <TableCell padding="none">
-                          <input
-                            value={row.areaCode}
-                            name="areacode"
+                {TABLE_HEAD?.map((headCell) => (
+                  <TableCell key={headCell.id}>
+                    <TableSortLabel hideSortIcon>{headCell.label}</TableSortLabel>
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row, i) => {
+                return (
+                  <div>
+                    <TableRow>
+                      {isEdit ? (
+                        <div>
+                          <TableCell padding="none">
+                            <input
+                              value={row.areaCode}
+                              name="areacode"
                             //   onChange={(e) => handleInputChange(e, i)}
-                          />
-                        </TableCell>
-                        <TableCell padding="none">
-                          <input
-                            value={row.area}
-                            name="area"
+                            />
+                          </TableCell>
+                          <TableCell padding="none">
+                            <input
+                              value={row.area}
+                              name="area"
                             //   onChange={(e) => handleInputChange(e, i)}
-                          />
-                        </TableCell>
-                        <TableCell padding="none">
-                          <input
-                            value={row.type}
-                            name="type"
+                            />
+                          </TableCell>
+                          <TableCell padding="none">
+                            <input
+                              value={row.type}
+                              name="type"
                             //   onChange={(e) => handleInputChange(e, i)}
-                          />
-                        </TableCell>
-                        <TableCell padding="none">
-                          <input
-                            value={row.majorCrops}
-                            name="majorcrops"
+                            />
+                          </TableCell>
+                          <TableCell padding="none">
+                            <input
+                              value={row.majorCrops}
+                              name="majorcrops"
                             //   onChange={(e) => handleInputChange(e, i)}
-                          />
-                        </TableCell>
-                      </div>
-                    ) : (
-                      <div>
-                        <TableCell component="th" scope="row">
-                          {row.id}
-                        </TableCell>
-                        <TableCell component="th" scope="row">
-                          {row.areaCode}
-                        </TableCell>
-                        <TableCell component="th" scope="row" align="center">
-                          {row.area}
-                        </TableCell>
-                        <TableCell component="th" scope="row" align="center">
-                          {row.type}
-                        </TableCell>
-                        <TableCell component="th" scope="row" align="center">
-                          {row.majorCrops}
-                        </TableCell>
-                        <TableCell
-                          component="th"
-                          scope="row"
-                          align="center"
-                        ></TableCell>
-                      </div>
-                    )}
-                    {isEdit ? (
-                      <Button className="mr10" onClick={handleConfirm}>
-                        {/* <ClearIcon /> */}clear
-                      </Button>
-                    ) : (
-                      <Button className="mr10" onClick={handleConfirm}>
-                        {/* <DeleteOutlineIcon /> */}delete
-                      </Button>
-                    )}
-                    {showConfirm && (
-                      <div>
-                        <Dialog
-                          open={showConfirm}
-                          onClose={handleNo}
-                          aria-labelledby="alert-dialog-title"
-                          aria-describedby="alert-dialog-description"
-                        >
-                          <DialogTitle id="alert-dialog-title">
-                            {"Confirm Delete"}
-                          </DialogTitle>
-                          <DialogContent>
-                            <DialogContentText id="alert-dialog-description">
-                              Are you sure to delete
-                            </DialogContentText>
-                          </DialogContent>
-                          <DialogActions>
-                            <Button
-                              onClick={() => handleRemoveClick(i)}
-                              color="primary"
-                              autoFocus
-                            >
-                              Yes
-                            </Button>
-                            <Button
-                              onClick={handleNo}
-                              color="primary"
-                              autoFocus
-                            >
-                              No
-                            </Button>
-                          </DialogActions>
-                        </Dialog>
-                      </div>
-                    )}
-                  </TableRow>
-                </div>
-              );
-            })}
-          </TableBody>
-        </Table>
+                            />
+                          </TableCell>
+                        </div>
+                      ) : (
+                        <div>
+                          <TableCell component="th" scope="row">
+                            {row.id}
+                          </TableCell>
+                          <TableCell component="th" scope="row">
+                            {row.areaCode}
+                          </TableCell>
+                          <TableCell component="th" scope="row" align="center">
+                            {row.area}
+                          </TableCell>
+                          <TableCell component="th" scope="row" align="center">
+                            {row.type}
+                          </TableCell>
+                          <TableCell component="th" scope="row" align="center">
+                            {row.majorCrops}
+                          </TableCell>
+                          <TableCell
+                            component="th"
+                            scope="row"
+                            align="center"
+                          ></TableCell>
+                        </div>
+                      )}
+                      {isEdit ? (
+                        <Button className="mr10" onClick={handleConfirm}>
+                          {/* <ClearIcon /> */}clear
+                        </Button>
+                      ) : (
+                        <Button className="mr10" onClick={handleConfirm}>
+                          {/* <DeleteOutlineIcon /> */}delete
+                        </Button>
+                      )}
+                      {showConfirm && (
+                        <div>
+                          <Dialog
+                            open={showConfirm}
+                            onClose={handleNo}
+                            aria-labelledby="alert-dialog-title"
+                            aria-describedby="alert-dialog-description"
+                          >
+                            <DialogTitle id="alert-dialog-title">
+                              {"Confirm Delete"}
+                            </DialogTitle>
+                            <DialogContent>
+                              <DialogContentText id="alert-dialog-description">
+                                Are you sure to delete
+                              </DialogContentText>
+                            </DialogContent>
+                            <DialogActions>
+                              <Button
+                                onClick={() => handleRemoveClick(i)}
+                                color="primary"
+                                autoFocus
+                              >
+                                Yes
+                              </Button>
+                              <Button
+                                onClick={handleNo}
+                                color="primary"
+                                autoFocus
+                              >
+                                No
+                              </Button>
+                            </DialogActions>
+                          </Dialog>
+                        </div>
+                      )}
+                    </TableRow>
+                  </div>
+                );
+              })}
+            </TableBody>
+          </Table>
         </TableContainer>
       </Box>
     </TableBody>
