@@ -92,7 +92,7 @@ function App() {
     <div className="App font-roboto box-border m-0 p-0">
       {/* <BrowserRouter> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
 
 
         <Route path="/login" element={<LoginPage />} />
