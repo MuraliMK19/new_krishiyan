@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import './Card.css';
-
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 interface CardProps {
     image: string;
     title: string;
@@ -115,14 +116,15 @@ const CardCarousel: React.FC = () => {
                         disabled={currentPage === 1}
                         className={`px-4 py-2 border ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
-                        Previous
+                        <ArrowCircleLeftIcon />
                     </button>
+
                     <button
                         onClick={handleNext}
                         disabled={currentPage === totalPages}
                         className={`px-4 py-2 border ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : ''}`}
                     >
-                        Next
+                        <ArrowCircleRightIcon />
                     </button>
                 </div>
                 {/* <p className="mt-3 text-sm">Page {currentPage} of {totalPages}</p> */}

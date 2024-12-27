@@ -115,7 +115,7 @@ function Navbar() {
         <Translator />
       </div>
       <div className="flex lg:hidden absolute left-2/3 transform -translate-x-1/2">
-        <button className="bg-[#3FC041] text-white rounded-md tracking-widest px-4 py-2 mx-auto">
+        <button className="bg-[#3FC041] text-white rounded-md tracking-wide p-2 py-2 mx-auto text-lg">
           <a href="/login">Log In</a>
         </button>
       </div>

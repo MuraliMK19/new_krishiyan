@@ -352,7 +352,7 @@ body {
   .big_box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
   }
 
   .box1 {
@@ -370,4 +370,21 @@ body {
     margin: 0;
     margin-bottom: 20px
   }
+
+  .small_box1 {
+    height: auto;
+  }
+
+  .small_box2 {
+    height: auto;
+  }
+
+  .small_box3 {
+    height: auto;
+  }
+
+  .big_box {
+    margin: 0;
+  }
+
 }

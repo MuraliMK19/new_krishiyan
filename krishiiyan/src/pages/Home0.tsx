@@ -9,9 +9,9 @@ function Home0() {
     }
 
     return (
-        <section id='home0' className='pt-24'>
+        <section id='home0' className='xl:pt-24'>
             <motion.div
-                className='xl:flex justify-between ml-10 xl:gap-x-10'
+                className='xl:flex justify-between p-2 xl:ml-10 xl:gap-x-10'
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}>
@@ -25,7 +25,7 @@ function Home0() {
                     <p className='text-[#4F4F4F] text-xl pt-5 text-justify font-semibold ml-2 p-2'>KrishiYan by WetAcre Sustainable Solutions is a cloud-based platform empowering farmers and FPOs with advanced tools for efficient farming, real-time insights, and seamless market access, fostering sustainable and profitable agriculture.</p>
                     <button className='mt-5 p-3 rounded-3xl w-56 font-bold tracking-wider text-lg hover:bg-[#3692FF] hover:shadow-blue-600 hover:shadow-xl' onClick={handleclick}>Request a Demo <span className='text-xl font-extrabold'>→</span></button>
                 </div>
-                <div className='xl:w-1/2 flex justify-end mr-10'>
+                <div className='xl:w-1/2 flex justify-end mr-10 p-2'>
                     <img src="/Images/Home-image.png" alt="loading..." className='h-[483px] w-[476]' />
                 </div>
             </motion.div>

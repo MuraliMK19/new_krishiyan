@@ -127,9 +127,9 @@ function NewContact() {
                                 <p>info@krishiyan.com</p>
                             </div>
                         </div>
-                        <div className='flex gap-10 items-center text-left mb-10'>
-                            <div>
-                                <img src="/Images/mdi_location.png" alt="loading" />
+                        <div className='flex gap-10 items-center text-left mb-5'>
+                            <div >
+                                <img src="/Images/mdi_location.png" alt="loading" className='h-12 w-20 xl:w-14' />
                             </div>
                             <div>
                                 <h1 className='font-semibold text-xl'>Contact Us</h1>
