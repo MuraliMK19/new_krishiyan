@@ -32,29 +32,29 @@ function Tech() {
             <div className="big_box">
                 <div className="box1">
                     <div className="icon-container1">
-                        <img src="/Images/healthicons_agriculture.png" alt="loading" className="bg-[#3fc041] rounded-full h-24 w-24 xl:p-2 empower_image1" />
+                        <img src="/Images/healthicons_agriculture.png" alt="loading" className="bg-[#3fc041] rounded-full h-20 w-20 xl:p-2 empower_image1" />
                     </div>
                     <div className="small_box1">
-                        <h1 className="text-2xl pb-3">FPO Centric Tools</h1>
-                        <p className="ml-7 xl:mt-5 text-xl">Tools tailored to FPOs include support for supply chain logistics, centralized records management, and financial tracking, empowering FPOs to deliver consistent, high-quality support to member farmers.</p>
+                        <h1 className="text-2xl pb-3 text-center">FPO Centric Tools</h1>
+                        <p className="ml-7 xl:mt-5 text-xl text-left">Tools tailored to FPOs include support for supply chain logistics, centralized records management, and financial tracking, empowering FPOs to deliver consistent, high-quality support to member farmers.</p>
                     </div>
                 </div>
                 <div className="box2">
                     <div className="icon-container2">
-                        <img src="/Images/mdi_regenerative-agriculture.png" alt="loading" className="bg-[#3fc041] rounded-full h-24 w-24 xl:p-2 empower_image2" />
+                        <img src="/Images/mdi_regenerative-agriculture.png" alt="loading" className="bg-[#3fc041] rounded-full h-20 w-20 xl:p-2 empower_image2" />
                     </div>
                     <div className="small_box2">
-                        <h1 className="text-2xl pb-3">Transparent Market Access</h1>
-                        <p className="ml-7 xl:mt-7 text-xl">By connecting directly with buyers, FPOs can avoid intermediary fees, increasing profitability while ensuring fresh, high-quality produce reaches consumers.</p>
+                        <h1 className="text-2xl pb-3 text-center">Transparent Market Access</h1>
+                        <p className="ml-7 xl:mt-7 text-xl text-left">By connecting directly with buyers, FPOs can avoid intermediary fees, increasing profitability while ensuring fresh, high-quality produce reaches consumers.</p>
                     </div>
                 </div>
                 <div className="box3">
                     <div className="icon-container3">
-                        <img src="/Images/carbon_agriculture-analytics.png" alt="loading" className="bg-[#3fc041] rounded-full h-24 w-24 xl:p-5 empower_image3" />
+                        <img src="/Images/carbon_agriculture-analytics.png" alt="loading" className="bg-[#3fc041] rounded-full h-20 w-20 xl:p-5 empower_image3" />
                     </div>
                     <div className="small_box3">
-                        <h1 className="text-2xl pb-3 tracking-tight">Handheld Device & Seamless Dashboard</h1>
-                        <p className="ml-7 text-xl">A user-friendly Mobile app and Webap brings KrishiYan’s resources directly to farmers, enabling on-the-go access to crop support, updates, and advisory services. </p>
+                        <h1 className="text-2xl pb-3 tracking-tight text-center">Handheld Device & Seamless Dashboard</h1>
+                        <p className="ml-7 text-xl text-left">A user-friendly Mobile app and Webap brings KrishiYan’s resources directly to farmers, enabling on-the-go access to crop support, updates, and advisory services. </p>
                     </div>
                 </div>
             </div>

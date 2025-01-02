@@ -9,7 +9,7 @@ function Servicescenterlogo() {
             <div className="logo-container mx-auto xl:w-[60vw] mb-[20px] hidden lg:block">
                 <img src="/Images/Chart.png" alt="loading" />
             </div>
-            <h1 className='text-[#3fc041] font-semibold text-lg pt-5 xl:hidden lg:hidden block'>Services to FPO's</h1>
+            <h1 className='text-[#3fc041] font-semibold text-lg pt-5 xl:hidden lg:hidden block'>Services to FPOs</h1>
             <div className='mobile-boxes m-2 font-semibold xl:hidden'>
                 <div className='rounded-lg p-3 service-box'>
                     <img src="/Images/majesticons_data.png" alt="loading.." className='h-8 w-8 m-auto' />

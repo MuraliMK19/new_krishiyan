@@ -474,7 +474,7 @@ const Footer = () => {
           <ul className="text-lg flex justify-between ">
             <div className="w-1/2  flex flex-col gap-y-5">
               <li>
-                <a href="#home" className="hover:underline">Home</a>
+                <a href="#home0" className="hover:underline">Home</a>
               </li>
               <li>
                 <a href="#about" className="hover:underline">About</a>

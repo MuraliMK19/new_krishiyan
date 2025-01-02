@@ -3,35 +3,66 @@ body {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 767px) {
-  .first_cards {
-    display: flex;
-    justify-content: space-around;
-    padding-top: 30px;
-  }
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+}
 
+/* For mobile view */
+@media screen and (max-width: 767px) {
+
+  .first_cards,
   .second_cards {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 15px 0;
   }
 }
 
-@media screen and (min-width: 767px) {
-  .first_cards {
-    display: inline-flex;
-    /* justify-content: space-between; */
-  }
+/* For desktop view */
+@media screen and (min-width: 768px) {
 
-  .first_cards>div {
-    margin: 50px;
-  }
-
-  .second_cards>div {
-    margin: 50px;
-  }
-
+  .first_cards,
   .second_cards {
-    display: inline-flex;
-    /* justify-content: space-around; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 70px;
+    margin: 20px 0;
+  }
+
+  .cont {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 40px;
+  }
+
+  .first_cards>div,
+  .second_cards>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+    /* Ensures consistency */
+    justify-content: center;
+  }
+
+  .first_cards>div img,
+  .second_cards>div img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .first_cards>div h1,
+  .second_cards>div h1 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+
   }
 }
