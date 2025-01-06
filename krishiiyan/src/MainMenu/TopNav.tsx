@@ -21,21 +21,21 @@ import HeadsetMicOutlinedIcon from '@mui/icons-material/HeadsetMicOutlined';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { TiWeatherPartlySunny } from "react-icons/ti";
-import Farmer_registration from "./Sub_components/Farmer_registration";
+import Farmer_registration from "./Sub_components/Farmer Management/Farmer_registration";
 
 
 // Lazy-loaded components
-const SaleComponent = React.lazy(() => import("./Sub_components/SaleComponent"));
-const InventoryComponent = React.lazy(() => import("./Sub_components/InventoryComponent"));
-const ReportComponent = React.lazy(() => import("./Sub_components/ReportComponent"));
-const CropLibraryComponent = React.lazy(() => import("./Sub_components/CropLibraryComponent"));
+const SaleComponent = React.lazy(() => import("./Sub_components/POI/SaleComponent"));
+const InventoryComponent = React.lazy(() => import("./Sub_components/POI/InventoryComponent"));
+const ReportComponent = React.lazy(() => import("./Sub_components/POI/ReportComponent"));
+const CropLibraryComponent = React.lazy(() => import("./Sub_components/Crop Insights/CropLibraryComponent"));
 
 const TopNav = () => {
-    const [activeMenu, setActiveMenu] = useState<"Point of Sale" | "Crop Advisory" | "FRM" | "Management">("Point of Sale");
+    const [activeMenu, setActiveMenu] = useState<"Point of Sale" | "Market Insights" | "Crop Insights" | "Farmer Management" | "FPO Management" | "Enquiry Management">("Point of Sale");
     const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
     const menuItems: Record<
-        "Point of Sale" | "Crop Advisory" | "FRM" | "Management",
+        "Point of Sale" | "Market Insights" | "Farmer Management" | "Crop Insights" | "FPO Management" | "Enquiry Management",
         { name: string; icon: React.ReactNode }[]
     > = {
         "Point of Sale": [
@@ -46,14 +46,8 @@ const TopNav = () => {
             { name: "Sales Statement", icon: <SalesStatementIcon /> },
             { name: "Help", icon: <HelpIcon /> },
         ],
-        "Crop Advisory": [
-            { name: "Crop Library", icon: <LocalFloristIcon /> },
-            { name: "Crop Calendar", icon: <CalendarTodayOutlinedIcon /> },
-            { name: "Crop Health", icon: <InsightsIcon /> },
-            { name: "FertiCal", icon: <GiFertilizerBag /> },
-            { name: "Mandi Price", icon: <GoGraph /> }
-        ],
-        FRM: [
+        "Market Insights": [],
+        "Farmer Management": [
             { name: "Dashboard", icon: <DashboardOutlinedIcon /> },
             { name: "Purchase", icon: <LocalOfferOutlinedIcon /> },
             { name: "Cultivation", icon: <LocalFloristIcon /> },
@@ -61,7 +55,15 @@ const TopNav = () => {
             { name: "Support", icon: <HeadsetMicOutlinedIcon /> },
             { name: "Farmer Registration", icon: <PersonAddOutlinedIcon /> },
         ],
-        Management: [
+        "Crop Insights": [
+            { name: "Crop Library", icon: <LocalFloristIcon /> },
+            { name: "Crop Calendar", icon: <CalendarTodayOutlinedIcon /> },
+            { name: "Crop Health", icon: <InsightsIcon /> },
+            { name: "FertiCal", icon: <GiFertilizerBag /> },
+            { name: "Mandi Price", icon: <GoGraph /> }
+        ],
+        "Enquiry Management": [],
+        "FPO Management": [
             { name: "Manage Accounting", icon: <TaskIcon /> },
         ],
     };
@@ -84,24 +86,24 @@ const TopNav = () => {
     };
 
     return (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col h-screen z-10 ">
             {/* Top Navigation */}
-            <div className="flex items-center justify-between bg-white shadow-lg h-20 px-6 z-50">
+            <div className="flex items-center justify-between bg-white shadow-lg h-20 px-6 z-40">
                 {/* Logo Section */}
                 <div>
                     <img src="Images/logoname.png" alt="Logo" className="h-12 sm:h-16" />
                 </div>
 
                 {/* Top Navigation Links */}
-                <div>
-                    <ul className="flex items-center space-x-10">
+                <div className="">
+                    <ul className="flex items-center text-base">
                         {Object.keys(menuItems).map((menu) => (
                             <li
                                 key={menu}
-                                className={`cursor-pointer px-4 py-1 rounded-sm transition ${activeMenu === menu ? "bg-[#3fc041] text-white" : "hover:bg-gray-200"
+                                className={`w-1/3 cursor-pointer px-4 py-1 rounded-sm transition ${activeMenu === menu ? "bg-[#3fc041] text-white" : "hover:bg-gray-200"
                                     }`}
                                 onClick={() => {
-                                    setActiveMenu(menu as "Point of Sale" | "Crop Advisory" | "FRM" | "Management");
+                                    setActiveMenu(menu as "Point of Sale" | "Market Insights" | "Crop Insights" | "Farmer Management" | "FPO Management" | "Enquiry Management");
                                     setActiveSubmenu(null);
                                 }}
                             >

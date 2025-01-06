@@ -24,11 +24,13 @@ const SignupPage = () => {
   const [isOtpVerified, setIsOtpVerified] = useState(false);
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
-    type: "",
-    name: "",
-    phone: "",
-    email: "",
+    typeOfOrganization: "Farmer group",
+    nameOfFpo: "",
+    contactNumber: "",
+    organizationalEmail: "",
     password: "",
+    typeOfFpo: "",
+    promoterName: "",
   });
 
   const nameSuggestions = [
@@ -39,6 +41,9 @@ const SignupPage = () => {
     { name: "Individual Proprietors" },
     { name: "Agri Input Dealers" },
     { name: "Others" },
+  ];
+  const FarmernameSuggestions = [
+    { name: "Farmer group" },
   ];
 
   const validateEmail = async (email: string) => {
@@ -101,11 +106,11 @@ const SignupPage = () => {
   };
 
   const handleMobileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, phone: event.target.value });
+    setFormData({ ...formData, contactNumber: event.target.value });
   };
 
   const handletypechange = (event: React.ChangeEvent<{}>, newValue: any) => {
-    setFormData({ ...formData, type: newValue ? newValue.name : "" });
+    setFormData({ ...formData, typeOfFpo: newValue ? newValue.name : "" });
   };
 
   const handleOpen = () => setOpen(true);
@@ -144,30 +149,42 @@ const SignupPage = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const name = data.get("name");
-    const email = data.get("email");
-    const pass = data.get("password");
-    const mobile = data.get("phone");
-    const type = data.get("type");
+    const nameOfFpo = data.get("name");
+    const organizationalEmail = data.get("email");
+    const password = data.get("password");
+    const contactNumber = data.get("phone");
+    const typeOfFpo = data.get("type");
+    const promoterName = data.get("promoterName");
 
+    console.log(nameOfFpo, organizationalEmail, contactNumber, typeOfFpo, promoterName);
     setFormData({
-      type: type ? type.toString() : "",
-      name: name ? name.toString() : "",
-      phone: mobile ? mobile.toString() : "",
-      email: email ? email.toString() : "",
-      password: pass ? pass.toString() : "",
+      typeOfOrganization: "Farmer group",
+      nameOfFpo: nameOfFpo ? nameOfFpo.toString() : "",
+      contactNumber: contactNumber ? contactNumber.toString() : "",
+      organizationalEmail: organizationalEmail ? organizationalEmail.toString() : "",
+      password: password ? password.toString() : "",
+      typeOfFpo: typeOfFpo ? typeOfFpo.toString() : "",
+      promoterName: promoterName ? promoterName.toString() : ""
     });
     await handleOtpSubmit();
   };
   const register = async () => {
     console.log("triggered register");
-    const { type, name, phone, email, password } = formData;
-    const [err, res] = await Api.dealerRegistration(
-      type,
-      name,
-      email,
+    const { typeOfOrganization,
+      nameOfFpo,
+      typeOfFpo,
+      organizationalEmail,
+      contactNumber,
       password,
-      phone
+      promoterName } = formData;
+    const [err, res] = await Api.dealerRegistration(
+      typeOfOrganization,
+      nameOfFpo,
+      typeOfFpo,
+      organizationalEmail,
+      contactNumber,
+      password,
+      promoterName
     );
 
     if (err) {
@@ -217,9 +234,46 @@ const SignupPage = () => {
             >
               <Autocomplete
                 className="rounded-xl border"
+                options={FarmernameSuggestions} // For typeOfOrganization, which is always "Farmer group"
+                value={{ name: formData.typeOfOrganization }} // Pre-filled value
+                getOptionLabel={(option) => option.name}
+                disableClearable // This ensures the user cannot change it since it's prefilled
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="typeOfOrganization"
+                    placeholder="Type of Organization"
+                    name="typeOfOrganization"
+                    autoComplete="typeOfOrganization"
+                    autoFocus
+                    InputProps={{
+                      ...params.InputProps,
+                      startAdornment: (
+                        <>
+                          <InputAdornment position="start">
+                            <img
+                              src="/Images/user.png"
+                              alt="User Icon"
+                              style={{ width: 24, height: 24, marginTop: 0 }}
+                            />
+                          </InputAdornment>
+                        </>
+                      ),
+                    }}
+                    className="type-field"
+                  />
+                )}
+              />
+
+              <Autocomplete
+                className="rounded-xl border"
                 options={nameSuggestions}
                 getOptionLabel={(option) => option.name}
                 onChange={handletypechange}
+                value={formData.typeOfFpo ? { name: formData.typeOfFpo } : null}
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -250,6 +304,7 @@ const SignupPage = () => {
                   />
                 )}
               />
+
               <TextField
                 className="p- rounded-xl border type-field"
                 type="text"
@@ -323,6 +378,30 @@ const SignupPage = () => {
                       <InputAdornment position="start">
                         <img
                           src="/Images/mail.png" // Replace with the actual image path or URL
+                          alt="User Icon"
+                          style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
+                        />
+                      </InputAdornment>
+                    </>
+                  ),
+                }}
+              />
+              <TextField
+                className="p- rounded-xl border type-field"
+                type="text"
+                margin="normal"
+                required
+                fullWidth
+                name="promoterName"
+                placeholder="Promoter Name"
+                id="promoterName"
+                autoComplete="promoter-name"
+                InputProps={{
+                  startAdornment: (
+                    <>
+                      <InputAdornment position="start">
+                        <img
+                          src="/Images/user.png" // Replace with the actual image path or URL
                           alt="User Icon"
                           style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
                         />

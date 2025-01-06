@@ -14,6 +14,7 @@ const AccountSetting = () => {
   const [address, setAddress] = useState("");
   const [primaryContactPerson, setPrimaryContactPerson] = useState("");
   const [primaryContactNumber, setPrimaryContactNumber] = useState("");
+  const [mail, setMail] = useState("")
   const [numberOfFarmers, setNumberOfFarmers] = useState("");
   const [crops, setCrops] = useState([]);
   const [selectedCrops, setSelectedCrops] = useState([]);

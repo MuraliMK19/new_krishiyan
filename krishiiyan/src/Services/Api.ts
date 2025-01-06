@@ -49,24 +49,38 @@ function normalizeServerError(serverResponse: any) {
 
 //Register
 export async function dealerRegistration(
-  type: any,
-  name: any,
-  email: any,
+  typeOfOrganization: any,
+  nameOfFpo: any,
+  typeOfFpo: any,
+  organizationalEmail: any,
+  contactNumber: any,
   password: any,
-  mobile: any
+  promoterName: any
 ) {
   try {
-    console.log(name, email, "object");
+    console.log(nameOfFpo, organizationalEmail, "object");
+    console.log('Sending data to the API:', {
+      typeOfOrganization,
+      nameOfFpo,
+      typeOfFpo,
+      organizationalEmail,
+      contactNumber,
+      password,
+      promoterName
+    });
     const axiosConfig: axios.AxiosRequestConfig = {
       method: "post",
-      url: `${apiURL}/auth/register`,
+      url: `https://krishiyanback.vercel.app/api/fpo`,
       data: {
-        type: type,
-        name: name,
-        email: email,
+        typeOfOrganization: typeOfOrganization,
+        nameOfFpo: nameOfFpo,
+        organizationalEmail: organizationalEmail,
         password: password,
-        mobile: mobile,
+        contactNumber: contactNumber,
+        typeOfFPO: typeOfFpo,
+        promoterName
       },
+
     };
     const response = await axios.default.request(axiosConfig);
     console.log(response);

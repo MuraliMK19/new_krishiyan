@@ -12,7 +12,7 @@ import * as Api from "../../Services/Api";
 import { toast } from "react-toastify";
 import './Login.css'
 
-import GoogleOauthLogin from "../../Components/Auth/GoogleLogin";
+// import GoogleOauthLogin from "../../Components/Auth/GoogleLogin";
 import { InputAdornment } from "@mui/material";
 
 const LoginPage = () => {
@@ -79,7 +79,7 @@ const LoginPage = () => {
           </div>
 
           {/* Form */}
-          <div className="md:w-[400px]">
+          <div className="md:w-[400px] m-5">
             <h2 className="font-bold text-[20px] text-left font-sans">Welcome Back, Log In</h2>
 
             <form onSubmit={handleSubmit} noValidate className="login-form">
@@ -169,18 +169,15 @@ const LoginPage = () => {
                 </h2>
                 <hr className="w-20 h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700" />
               </div>
-
-              <Grid container>
-                <Grid item>
-                  <Typography variant="body2" sx={{ mt: 1 }}>
-                    Login with Google : {""}
-                    <GoogleOauthLogin />
+              <div className="flex flex-col items-center justify-center">
+                <div className="mt-2 text-center">
+                  <Typography variant="body2">
+                    Login with Google: {""}
+                    {/* <GoogleOauthLogin /> */}
                   </Typography>
-                </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item>
-                  <Typography variant="body2" sx={{ mt: 1 }}>
+                </div>
+                <div className="mt-2 text-center">
+                  <Typography variant="body2">
                     Don't have an account? {""}
                     <Link
                       variant="subtitle2"
@@ -190,8 +187,10 @@ const LoginPage = () => {
                       {" Sign Up"}
                     </Link>
                   </Typography>
-                </Grid>
-              </Grid>
+                </div>
+              </div>
+
+
             </form>
           </div>
 
