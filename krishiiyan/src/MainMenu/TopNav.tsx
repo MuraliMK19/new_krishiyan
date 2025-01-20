@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import CircleNotificationsRoundedIcon from "@mui/icons-material/CircleNotificationsRounded";
 import { Avatar, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -22,6 +22,8 @@ import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import Farmer_registration from "./Sub_components/Farmer Management/Farmer_registration";
+import { useNavigate } from "react-router-dom";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 // Lazy-loaded components
@@ -33,7 +35,12 @@ const CropLibraryComponent = React.lazy(() => import("./Sub_components/Crop Insi
 const TopNav = () => {
     const [activeMenu, setActiveMenu] = useState<"Point of Sale" | "Market Insights" | "Crop Insights" | "Farmer Management" | "FPO Management" | "Enquiry Management">("Point of Sale");
     const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+    const [userEmail, setUserEmail] = useState<string | null>(null);
+    const [userName, setUserName] = useState<string | null>(null);
+    const [userId, setUserId] = useState<string | null>(null);
+    const navigate = useNavigate();
 
+    // Menu items for each main menu
     const menuItems: Record<
         "Point of Sale" | "Market Insights" | "Farmer Management" | "Crop Insights" | "FPO Management" | "Enquiry Management",
         { name: string; icon: React.ReactNode }[]
@@ -84,6 +91,20 @@ const TopNav = () => {
                 return <p>Select a submenu to see the content.</p>;
         }
     };
+    useEffect(() => {
+        setUserEmail(localStorage.getItem("dealerMail"));
+        setUserName(localStorage.getItem("dealerName"));
+        setUserId(localStorage.getItem("dealerId"));
+
+        console.log(localStorage.getItem("dealerMail"));
+        console.log(localStorage.getItem("dealerName"));
+        console.log(localStorage.getItem("dealerId"));
+    }, []);
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate('/login');
+    };
+
 
     return (
         <div className="flex flex-col h-screen z-10 ">
@@ -151,8 +172,8 @@ const TopNav = () => {
                     <div className="flex items-center space-x-2">
                         <Avatar />
                         <div>
-                            <p className="font-semibold">Kishan</p>
-                            <p className="text-sm text-gray-500">kishan@gmail.com</p>
+                            <p className="font-semibold text-left">{userName}</p>
+                            <p className="text-sm text-gray-500">{userEmail}</p>
                         </div>
                     </div>
                 </div>
@@ -183,13 +204,16 @@ const TopNav = () => {
                                 </span>
                             </li>
                         ))}
+                        <button className="p-2 hover:cursor-pointer bg-[#3fc041] fixed bottom-10 " onClick={handleLogout}>
+                            <LogoutIcon /> Logout
+                        </button>
                     </ul>
 
 
                 </div>
 
                 {/* Main Content Area */}
-                <div className="flex-1 p-6 bg-[#f6f6f6]">
+                <div className="flex-1 p-0 bg-[#f6f6f6]">
                     {/* <h1 className="text-2xl font-semibold">{activeMenu}</h1> */}
                     <Suspense fallback={<p>Loading...</p>}>{renderContent()}</Suspense>
                 </div>

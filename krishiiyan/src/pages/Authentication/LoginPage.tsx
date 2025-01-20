@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
@@ -11,64 +11,90 @@ import { useNavigate } from "react-router-dom";
 import * as Api from "../../Services/Api";
 import { toast } from "react-toastify";
 import './Login.css'
+import LinearProgress from '@mui/material/LinearProgress';
 
 // import GoogleOauthLogin from "../../Components/Auth/GoogleLogin";
 import { InputAdornment } from "@mui/material";
 
 const LoginPage = () => {
+  const [loading, setLoading] = useState(false);
   let email1 = "";
   let check1 = false;
 
-  const validateEmail = (email: string) => {
-    const validDomains = ["@gmail.com", "@krishiyan.com", "info@", "@"];
+  // const validateEmail = (email: string) => {
+  //   const validDomains = ["@gmail.com", "@krishiyan.com", "info@", "@"];
 
-    for (const domain of validDomains) {
-      if (email.includes(domain)) {
-        check1 = true;
-        console.log("check 1 ", check1);
-      }
-      console.log("check 1 ", check1);
-    }
-  };
+  //   for (const domain of validDomains) {
+  //     if (email.includes(domain)) {
+  //       check1 = true;
+  //       console.log("check 1 ", check1);
+  //     }
+  //     console.log("check 1 ", check1);
+  //   }
+  // };
 
-  const handleEmailChange = (event: any) => {
-    email1 = event.target.value;
-    console.log(email1);
-    check1 = false;
-    validateEmail(email1);
-  };
+  // const handleEmailChange = (event: any) => {
+  //   email1 = event.target.value;
+  //   console.log(email1);
+  //   check1 = false;
+  //   validateEmail(email1);
+  // };
 
   const navigate = useNavigate();
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+    setLoading(true);
     const data = new FormData(event.currentTarget);
-    let email = data.get("email");
+    let contactNumber = data.get("contactNumber");
     let pass = data.get("password");
 
-    const [err, res] = await Api.dealerLogin(email, pass);
+    console.log("Contact Number:", contactNumber);
+    console.log("Password:", pass);
 
+    const [err, res] = await Api.dealerLogin(contactNumber, pass);
+    if (res && res.data && res.data.data.fpoOrganization.typeOfOrganization !== "Farmer group") {
+      console.log("Type of Organization:", res?.data?.data?.typeOfOrganization);
+      toast.error("Invalid User", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
+      setLoading(false); // Stop loading
+      return;
+    }
     if (err) {
+      console.error("Error:", err);
       toast.error(err.data, {
         position: toast.POSITION.TOP_RIGHT,
       });
-    }
+    } else {
+      console.log("Response:", res);
 
-    if (res && check1) {
+      // if (res && check1) {
       //  console.log(res);
-      localStorage.setItem("authToken", res?.data?.token);
-      localStorage.setItem("dealerName", res?.data?.oldUser?.name);
-      localStorage.setItem("dealermobile", res?.data?.oldUser?.mobile);
-      localStorage.setItem("dealerMail", res?.data?.oldUser?.email);
-      navigate("/");
-      toast.success("Login Success !", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
+      if (res && res.data) {
+        const userData = res.data.data.fpoOrganization;
+        localStorage.setItem("authToken", res.data.token);
+        localStorage.setItem("dealerName", userData.nameOfFpo);
+        localStorage.setItem("dealermobile", userData.contactNumber);
+        localStorage.setItem("dealerMail", userData.organizationalEmail);
+        localStorage.setItem("dealerId", userData._id);
+        navigate("/top");
+        toast.success("Login Success !", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      }
+      // }
     }
+    setLoading(false);
   };
 
   return (
     <>
+      {loading && (
+        <Box sx={{ width: '100%', color: 'grey.500' }}>
+          <LinearProgress color="success" />
+        </Box>
+      )}
       <img src="/Images/logoname.png" alt="logo-loading" className="h-16 w-40 m-5" />
       <section className="flex items-center justify-center mt-5">
         {/* Wrap the form and image in a container */}
@@ -87,18 +113,18 @@ const LoginPage = () => {
                 margin="normal"
                 required
                 fullWidth
-                id="email"
-                placeholder="User Name"
-                name="email"
-                autoComplete="email"
+                id="contactNumber"
+                placeholder="Mobile Number"
+                name="contactNumber"
+                autoComplete="tel"
                 autoFocus
-                onChange={handleEmailChange}
-                inputProps={{
-                  pattern:
-                    "^(\\w+@(gmail\\.com|info|krishiyan\\.com|contact))?$",
-                  title:
-                    "Please enter a valid email address with domains @gmail.com, @info, or @krishiyan.com",
-                }}
+                // onChange={handleEmailChange}
+                // inputProps={{
+                //   pattern:
+                //     "^(\\w+@(gmail\\.com|info|krishiyan\\.com|contact))?$",
+                //   title:
+                //     "Please enter a valid email address with domains @gmail.com, @info, or @krishiyan.com",
+                // }}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">

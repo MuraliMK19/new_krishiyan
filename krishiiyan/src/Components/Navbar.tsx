@@ -13,7 +13,9 @@ function Navbar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  const onlogin = () => {
+    window.location.href = '/login';
+  }
   return (
 
     <>    <div className="container-fluid sticky top-0 bg-white p-4 sm:p-6 flex justify-between items-center transition-all duration-500 xl:h-20 z-50 shadow-md">
@@ -109,14 +111,14 @@ function Navbar() {
 
       {/* Login and Translator */}
       <div className="hidden lg:flex items-center space-x-4">
-        <button className="bg-[#3FC041] text-white rounded-md tracking-widest px-4 py-2">
-          <a href="/login">Log In</a>
+        <button className="bg-[#3FC041] text-white rounded-md tracking-widest px-4 py-2" onClick={onlogin}>
+          Log In
         </button>
         <Translator />
       </div>
       <div className="flex lg:hidden absolute left-2/3 transform -translate-x-1/2">
-        <button className="bg-[#3FC041] text-white rounded-md tracking-wide p-2 mx-auto text-lg">
-          <a href="/login">Log In</a>
+        <button className="bg-[#3FC041] text-white rounded-md tracking-wide p-2 mx-auto text-lg" onClick={onlogin}>
+          Log In
         </button>
       </div>
     </div>

@@ -3,6 +3,7 @@ import * as axios from "axios";
 // const apiURL = "http://localhost:5001/api";
 // const apiURL = "https://krishiyan-backend.vercel.app/api";
 const apiURL = process.env.REACT_APP_BACKEND_URL;
+const baseURL = "https://krishiyanback.vercel.app/api";
 //https://d1dv04h56lh39n.cloudfront.net/api
 // "http://localhost:5001/api";   localhost
 //http://35.77.226.139:5001/api   Production url
@@ -70,7 +71,7 @@ export async function dealerRegistration(
     });
     const axiosConfig: axios.AxiosRequestConfig = {
       method: "post",
-      url: `https://krishiyanback.vercel.app/api/fpo`,
+      url: `${baseURL}fpo`,
       data: {
         typeOfOrganization: typeOfOrganization,
         nameOfFpo: nameOfFpo,
@@ -119,13 +120,13 @@ export async function forgotPassword(email: any, NewPassword: any, otp: any) {
 ///
 
 //Login
-export async function dealerLogin(email: any, password: any) {
+export async function dealerLogin(contactNumber: any, password: any) {
   try {
     const axiosConfig: axios.AxiosRequestConfig = {
       method: "post",
-      url: `${apiURL}/auth/login`,
+      url: `${baseURL}/app/sign-in`,
       data: {
-        email: email,
+        contactNumber: contactNumber,
         password: password,
       },
     };
@@ -179,49 +180,110 @@ export async function getDealer() {
 
 // ========================================== NEW FARMER REGISTRATION ====================================================================
 
-export async function createFarmer(
-  name: string,
-  mobile: number,
-  mobileIsWhatsapp: boolean,
-  state: string,
-  city: string,
-  zip: string,
-  street: string,
-  totalLandArea: string,
-  dealer_farmer_relation: string,
-  plantation_type: string
-) {
+// export async function createFarmer(
+//   name: string,
+//   mobile: number,
+//   mobileIsWhatsapp: boolean,
+//   state: string,
+//   city: string,
+//   zip: string,
+//   street: string,
+//   totalLandArea: string,
+//   dealer_farmer_relation: string,
+//   plantation_type: string
+// ) {
+//   try {
+//     let token: any = localStorage.getItem("authToken");
+//     const axiosConfig: axios.AxiosRequestConfig = {
+//       method: "post",
+//       url: `${apiURL}/farmer`,
+//       data: {
+//         name: name,
+//         mobile: mobile,
+//         mobileIsWhatsapp: mobileIsWhatsapp,
+//         address: {
+//           state: state,
+//           city: city,
+//           zip: zip,
+//           street: street,
+//         },
+//         totalLandArea: totalLandArea,
+//         dealer_farmer_relation: dealer_farmer_relation,
+//         plantation_type: plantation_type,
+//       },
+//       headers: { Authorization: "Bearer " + token },
+//     };
+//     const response = await axios.default.request(axiosConfig);
+//     const normalizedResponse = normalizeServerResponse(response);
+//     return [null, normalizedResponse];
+//   } catch (error) {
+//     const errorObject = normalizeServerError(error);
+//     return [errorObject, null];
+//   }
+// }
+
+// pincode api
+export async function postPincode(pincode: any) {
   try {
-    let token: any = localStorage.getItem("authToken");
     const axiosConfig: axios.AxiosRequestConfig = {
       method: "post",
-      url: `${apiURL}/farmer`,
+      url: `${baseURL}/farmer/address`,
       data: {
-        name: name,
-        mobile: mobile,
-        mobileIsWhatsapp: mobileIsWhatsapp,
-        address: {
-          state: state,
-          city: city,
-          zip: zip,
-          street: street,
-        },
-        totalLandArea: totalLandArea,
-        dealer_farmer_relation: dealer_farmer_relation,
-        plantation_type: plantation_type,
+        pincode: pincode,
       },
-      headers: { Authorization: "Bearer " + token },
     };
     const response = await axios.default.request(axiosConfig);
     const normalizedResponse = normalizeServerResponse(response);
     return [null, normalizedResponse];
   } catch (error) {
     const errorObject = normalizeServerError(error);
+    console.log(error);
     return [errorObject, null];
   }
 }
 
-// genertae otp
+//register farmer
+export async function registerFarmer(
+  dealerNumber: any,
+  name: any,
+  whatsappNumber: any,
+  totalOwnedFarm: any,
+  totalLeaseFarm: any,
+  village: any,
+  district: any,
+  state: any,
+  typeOfCultivationPractice: any,
+  pincode: any
+) {
+  console.log("registerFarmer", dealerNumber, name, whatsappNumber, totalOwnedFarm, totalLeaseFarm, village, district, state, typeOfCultivationPractice, pincode);
+  try {
+    const axiosConfig: axios.AxiosRequestConfig = {
+      method: "post",
+      url: `${baseURL}/appFarmer/register`,
+      data: {
+        dealerNumber: dealerNumber,
+        name: name,
+        whatsappNumber: whatsappNumber,
+        totalOwnedFarm: totalOwnedFarm,
+        totalLeaseFarm: totalLeaseFarm,
+        village: village,
+        district: district,
+        state: state,
+        typeOfCultivationPractice: typeOfCultivationPractice,
+        pincode: pincode,
+      },
+    };
+    const response = await axios.default.request(axiosConfig);
+    const normalizedResponse = normalizeServerResponse(response);
+    return [null, normalizedResponse];
+  } catch (error) {
+    const errorObject = normalizeServerError(error);
+    console.log(error);
+    return [errorObject, null];
+  }
+}
+
+// generate otp
 
 function generateOTP() {
   const otp = Math.floor(100000 + Math.random() * 900000);
