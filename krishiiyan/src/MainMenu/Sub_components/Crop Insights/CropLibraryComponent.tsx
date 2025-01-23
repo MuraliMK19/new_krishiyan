@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Autocomplete, TextField, Button, Box } from '@mui/material';
 import GeneralInfo from './GeneralInfo';
+import Nutrient from './Nutrient';
+import Varieties from './Varieties';
+import Presowing from './Presowing';
 
 function CropLibraryComponent() {
     const [crops, setCrops] = useState<string[]>([]);
@@ -34,6 +37,7 @@ function CropLibraryComponent() {
     const handleButtonClick = () => {
         console.log('Selected Crop:', selectedCrop);
         // Add further logic for button click if needed
+        setActiveSubmenu("General Information");
     };
 
     const menuItems = {
@@ -49,13 +53,13 @@ function CropLibraryComponent() {
     const renderSubmenuContent = () => {
         switch (activeSubmenu) {
             case "General Information":
-                return <GeneralInfo />;
+                return <GeneralInfo selectedCrop={selectedCrop} />;
             case "Varieties":
-                return <div>Varieties Content</div>;
+                return <Varieties selectedCrop={selectedCrop} />;
             case "Pre-sowing Practices":
-                return <div>Pre-sowing Practices Content</div>;
+                return <Presowing selectedCrop={selectedCrop} />;
             case "Nutrient Management":
-                return <div>Nutrient Management Content</div>;
+                return <Nutrient selectedCrop={selectedCrop} />;
             case "Crop Protection":
                 return <div>Crop Protection Content</div>;
             case "Irrigation Management":
@@ -139,7 +143,7 @@ function CropLibraryComponent() {
                     </Button>
                 </Box>
             </div>
-            <div className="bg-white rounded-lg shadow-md">
+            <div className="bg-white rounded-lg shadow-md sticky top-20">
                 <ul className="flex items-center justify-around text-base">
                     {Object.keys(menuItems).map((menu) => (
                         <li

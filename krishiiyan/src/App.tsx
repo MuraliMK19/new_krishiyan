@@ -14,6 +14,7 @@ import ShowData from "./Components/ShowData";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import TopNav from "./MainMenu/TopNav";
+import BulkUploadFarmers from "./MainMenu/Sub_components/Farmer Management/BulkUploadFarmers";
 
 // AuthGuard Component
 const AuthGuard = () => {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/showFPOData" element={<ShowData />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/bulk" element={<BulkUploadFarmers />} />
 
         {/* Protected Routes */}
         <Route element={<AuthGuard />}>

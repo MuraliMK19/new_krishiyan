@@ -1,1 +1,1 @@
-name,whatsappNumber,pincode,village,district,state,totalOwnedFarm,totalLeaseFarm,typeOfCultivationPractice
+name,whatsappNumber,totalOwnedFarm,geoLocationOwnedFarm,,totalLeaseFarm,geoLocationLeaseFarm,pincode,village,district,state,address,typeOfCultivationPractice,bankName,accountName,accountNumber,ifscCode,pan,aadhaarNumber

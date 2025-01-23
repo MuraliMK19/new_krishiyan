@@ -107,9 +107,9 @@ const TopNav = () => {
 
 
     return (
-        <div className="flex flex-col h-screen z-10 ">
+        <div className="flex flex-col h-screen z-10">
             {/* Top Navigation */}
-            <div className="flex items-center justify-between bg-white shadow-lg h-20 px-6 z-40">
+            <div className="flex items-center justify-between bg-white shadow-lg h-20 px-6 z-50 fixed top-0 w-full">
                 {/* Logo Section */}
                 <div>
                     <img src="Images/logoname.png" alt="Logo" className="h-12 sm:h-16" />
@@ -180,9 +180,9 @@ const TopNav = () => {
             </div>
 
             {/* Static Side Drawer and Main Content */}
-            <div className="flex flex-1 z-40 shadow-lg">
+            <div className="flex flex-1 z-40 shadow-lg mt-20">
                 {/* Static Side Drawer */}
-                <div className="w-64 bg-white shadow-lg border-r">
+                <div className="w-64 bg-white shadow-lg border-r fixed h-full">
                     <ul className="space-y-3 mt-2">
                         {menuItems[activeMenu]?.map((item, index) => (
                             <li
@@ -208,12 +208,10 @@ const TopNav = () => {
                             <LogoutIcon /> Logout
                         </button>
                     </ul>
-
-
                 </div>
 
                 {/* Main Content Area */}
-                <div className="flex-1 p-0 bg-[#f6f6f6]">
+                <div className="flex-1 p-0 bg-[#f6f6f6] ml-64">
                     {/* <h1 className="text-2xl font-semibold">{activeMenu}</h1> */}
                     <Suspense fallback={<p>Loading...</p>}>{renderContent()}</Suspense>
                 </div>

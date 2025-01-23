@@ -39,7 +39,7 @@ const BulkUploadFarmers = () => {
 
     const handleUpload = async () => {
         try {
-            const apiResponse = await axios.post("http://localhost:80/api/api/appFarmer/farmer/bulk-upload", farmersData);
+            const apiResponse = await axios.post("https://krishiyanback.vercel.app/api/appFarmer/farmer/bulk-upload", farmersData);
             setResponse(apiResponse.data);
         } catch (error) {
             console.error("Error uploading farmers data:", error);

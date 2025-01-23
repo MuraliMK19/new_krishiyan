@@ -41,31 +41,31 @@ function Farmer_registration() {
 
     const handleFileUpload = (data: any) => {
         const jsonData = data.map((row: any) => ({
-            dealerNumber: row[0],
-            name: row[1],
-            whatsappNumber: row[2],
-            totalOwnedFarm: row[3],
-            geoLocationOwnedFarm: row[4],
-            totalLeaseFarm: row[5],
-            geoLocationLeaseFarm: row[6],
-            pincode: row[7],
-            village: row[8],
-            district: row[9],
-            state: row[10],
-            address: row[11],
-            typeOfCultivationPractice: row[12],
-            bankName: row[13],
-            accountName: row[14],
-            accountNumber: row[15],
-            ifscCode: row[16],
-            pan: row[17],
-            aadhaarNumber: row[18],
+            dealerNumber: localStorage.getItem('dealermobile'),
+            name: row[0],
+            whatsappNumber: row[1],
+            totalOwnedFarm: row[2],
+            geoLocationOwnedFarm: row[3],
+            totalLeaseFarm: row[4],
+            geoLocationLeaseFarm: row[5],
+            pincode: row[6],
+            village: row[7],
+            district: row[8],
+            state: row[9],
+            address: row[10],
+            typeOfCultivationPractice: row[11],
+            bankName: row[12],
+            accountName: row[13],
+            accountNumber: row[14],
+            ifscCode: row[15],
+            pan: row[16],
+            aadhaarNumber: row[17],
         }));
         setFarmersData(jsonData);
     };
     const handleUpload = async () => {
         try {
-            const apiResponse = await axios.post("http://localhost:80/api/api/appFarmer/farmer/bulk-upload", farmersData);
+            const apiResponse = await axios.post("https://krishiyanback.vercel.app/api/appFarmer/farmer/bulk-upload", farmersData);
             setResponse(apiResponse.data);
             toast.success("Farmers data uploaded successfully", {
                 position: toast.POSITION.TOP_RIGHT
@@ -227,9 +227,9 @@ function Farmer_registration() {
                             cssClass="csv-reader-input"
                             inputId="csv-upload"
                         />
-                        <div className="bg-white border-2 border-[#3fc041] text-[#3fc041] px-3 py-1 rounded-md text-sm font-medium flex items-center">
+                        <button className="bg-white border-2 border-[#3fc041] text-[#3fc041] px-3 py-1 rounded-md text-sm font-medium flex items-center">
                             <FileUploadOutlinedIcon className="mr-1" /> Upload Data
-                        </div>
+                        </button>
                     </label>
                     <a href="/sample.csv" className='p-2'>Click here to download <span className='text-[#3fc041] underline'>sample.csv</span></a>
                     <p className="text-gray-500 mt-2 text-sm">
