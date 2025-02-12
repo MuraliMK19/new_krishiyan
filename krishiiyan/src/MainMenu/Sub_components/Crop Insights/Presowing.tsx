@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { baseURL } from '../../../Services/Api';
-import { Table } from '@mui/material';
+import { CircularProgress, Table } from '@mui/material';
 
 interface PresowingProps {
     selectedCrop: string;
@@ -24,7 +24,7 @@ function Presowing({ selectedCrop }: PresowingProps) {
         fetchData();
     }, [selectedCrop]);
 
-    console.log('Presowing:', presowing);
+    // console.log('Presowing:', presowing);
 
     return (
         <div>
@@ -57,7 +57,10 @@ function Presowing({ selectedCrop }: PresowingProps) {
                     </tbody>
                 </Table>
             ) : (
-                <p>Loading...</p>
+                <div>
+                    <CircularProgress color="success" />
+                    <p>Loading Pre-sowing practices...</p>
+                </div>
             )}
         </div>
     );

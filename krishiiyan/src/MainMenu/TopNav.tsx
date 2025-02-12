@@ -31,6 +31,7 @@ const SaleComponent = React.lazy(() => import("./Sub_components/POI/SaleComponen
 const InventoryComponent = React.lazy(() => import("./Sub_components/POI/InventoryComponent"));
 const ReportComponent = React.lazy(() => import("./Sub_components/POI/ReportComponent"));
 const CropLibraryComponent = React.lazy(() => import("./Sub_components/Crop Insights/CropLibraryComponent"));
+const Mandi_price = React.lazy(() => import("./Sub_components/Crop Insights/Mandi_Price/Mandi_price"));
 
 const TopNav = () => {
     const [activeMenu, setActiveMenu] = useState<"Point of Sale" | "Market Insights" | "Crop Insights" | "Farmer Management" | "FPO Management" | "Enquiry Management">("Point of Sale");
@@ -87,6 +88,8 @@ const TopNav = () => {
                 return <CropLibraryComponent />;
             case "Farmer Registration":
                 return <Farmer_registration />
+            case "Mandi Price":
+                return <Mandi_price startDate={null} endDate={null} />
             default:
                 return <p>Select a submenu to see the content.</p>;
         }

@@ -5,6 +5,10 @@ import GeneralInfo from './GeneralInfo';
 import Nutrient from './Nutrient';
 import Varieties from './Varieties';
 import Presowing from './Presowing';
+import Crop_protection from './Crop_protection';
+import IrrigationManagement from './IrrigationManagement';
+import Harvest from './Harvest';
+import FAQ from './FAQ';
 
 function CropLibraryComponent() {
     const [crops, setCrops] = useState<string[]>([]);
@@ -61,15 +65,15 @@ function CropLibraryComponent() {
             case "Nutrient Management":
                 return <Nutrient selectedCrop={selectedCrop} />;
             case "Crop Protection":
-                return <div>Crop Protection Content</div>;
+                return <Crop_protection selectedCrop={selectedCrop} />
             case "Irrigation Management":
-                return <div>Irrigation Management Content</div>;
+                return <IrrigationManagement selectedCrop={selectedCrop} />
             case "Harvest":
-                return <div>Harvest Content</div>;
+                return <Harvest selectedCrop={selectedCrop} />;
             case "FAQs":
-                return <div>FAQs Content</div>;
+                return <FAQ selectedCrop={selectedCrop} />
             default:
-                return null;
+                return <GeneralInfo selectedCrop={selectedCrop} />;
         }
     }
     return (
