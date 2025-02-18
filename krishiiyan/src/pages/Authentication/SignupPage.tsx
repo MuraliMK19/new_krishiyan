@@ -234,10 +234,11 @@ const SignupPage = () => {
             >
               <Autocomplete
                 className="rounded-xl border"
-                options={FarmernameSuggestions} // For typeOfOrganization, which is always "Farmer group"
-                value={{ name: formData.typeOfOrganization }} // Pre-filled value
+                options={FarmernameSuggestions}
+                value={FarmernameSuggestions.find(option => option.name === formData.typeOfOrganization) || undefined} // Ensure it exists
                 getOptionLabel={(option) => option.name}
-                disableClearable // This ensures the user cannot change it since it's prefilled
+                isOptionEqualToValue={(option, value) => option.name === value.name} // Define equality check
+                disableClearable
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -252,15 +253,13 @@ const SignupPage = () => {
                     InputProps={{
                       ...params.InputProps,
                       startAdornment: (
-                        <>
-                          <InputAdornment position="start">
-                            <img
-                              src="/Images/user.png"
-                              alt="User Icon"
-                              style={{ width: 24, height: 24, marginTop: 0 }}
-                            />
-                          </InputAdornment>
-                        </>
+                        <InputAdornment position="start">
+                          <img
+                            src="/Images/user.png"
+                            alt="User Icon"
+                            style={{ width: 24, height: 24, marginTop: 0 }}
+                          />
+                        </InputAdornment>
                       ),
                     }}
                     className="type-field"
@@ -268,12 +267,14 @@ const SignupPage = () => {
                 )}
               />
 
+
               <Autocomplete
                 className="rounded-xl border"
                 options={nameSuggestions}
                 getOptionLabel={(option) => option.name}
+                isOptionEqualToValue={(option, value) => option.name === value.name} // 🔥 Fix here
                 onChange={handletypechange}
-                value={formData.typeOfFpo ? { name: formData.typeOfFpo } : null}
+                value={nameSuggestions.find((option) => option.name === formData.typeOfFpo) || null} // ✅ Ensure valid selection
                 renderInput={(params) => (
                   <TextField
                     {...params}
@@ -291,9 +292,9 @@ const SignupPage = () => {
                         <>
                           <InputAdornment position="start">
                             <img
-                              src="/Images/user.png" // Replace with the actual image path or URL
+                              src="/Images/user.png"
                               alt="User Icon"
-                              style={{ width: 24, height: 24, marginTop: 0 }} // Adjust dimensions as needed
+                              style={{ width: 24, height: 24, marginTop: 0 }}
                             />
                           </InputAdornment>
                           {params.InputProps.startAdornment}
@@ -304,6 +305,8 @@ const SignupPage = () => {
                   />
                 )}
               />
+
+
 
               <TextField
                 className="p- rounded-xl border type-field"

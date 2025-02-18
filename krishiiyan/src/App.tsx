@@ -15,6 +15,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import TopNav from "./MainMenu/TopNav";
 import BulkUploadFarmers from "./MainMenu/Sub_components/Farmer Management/BulkUploadFarmers";
+import SignUpPage_new from "./pages/Authentication/SignUpPage_new";
 
 // AuthGuard Component
 const AuthGuard = () => {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/bulk" element={<BulkUploadFarmers />} />
+        <Route path="/new_signup" element={<SignUpPage_new />} />
 
         {/* Protected Routes */}
         <Route element={<AuthGuard />}>
